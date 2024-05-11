@@ -4,25 +4,29 @@ import Client from "../Components/Client";
 import Slides from "../Components/Slider.jsx";
 import TestimonialSlider from "../Components/TestimonialSlider.jsx";
 import Aos from "aos";
-import 'aos/dist/aos.css'
+import "aos/dist/aos.css";
+import ScrollToTop from "../Components/ScrollToTop";
 
 function Hero() {
-  useEffect(()=>{
-    Aos.init({duration: 2000})
-  },[])
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <>
+      <ScrollToTop />
       <Slides />
+
       {/* Here */}
       <div className="container md:px-28 px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
-          <div className="w-full lg:w-1/2" 
-           data-aos="fade-right"
-           data-aos-duration="1000"
+          <div
+            className="w-full lg:w-1/2"
+            data-aos="fade-right"
+            data-aos-duration="1000"
           >
             <div className="lg:max-w-lg">
               <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
-              Solutions
+                Solutions
               </h1>
 
               <p className="mt-3 text-gray-600 dark:text-gray-400 text-xl">
@@ -40,9 +44,10 @@ function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center w-full px-14 mt-4 lg:mt-0 lg:w-1/2"
-           data-aos="fade-left"
-           data-aos-duration="1000"
+          <div
+            className="flex items-center justify-center w-full px-14 mt-4 lg:mt-0 lg:w-1/2"
+            data-aos="fade-left"
+            data-aos-duration="1000"
           >
             <img
               className="w-full h-full lg:max-w-3xl"
@@ -53,8 +58,7 @@ function Hero() {
         </div>
       </div>
       <TestimonialSlider />
-      <Client /> 
-
+      <Client />
     </>
   );
 }
