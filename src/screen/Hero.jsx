@@ -25,7 +25,7 @@ function Hero() {
             data-aos-duration="1000"
           >
             <div className="lg:max-w-lg">
-              <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+              <h1 className="text-3xl font-semibold text-gray-800  lg:text-4xl uppercase">
                 Solutions
               </h1>
 
@@ -45,13 +45,13 @@ function Hero() {
           </div>
 
           <div
-            className="flex items-center justify-center w-full px-14 mt-4 lg:mt-0 lg:w-1/2"
+            className="flex items-center justify-center w-full  mt-4 lg:mt-0 lg:w-1/2"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
             <img
               className="w-full h-full lg:max-w-3xl"
-              src="https://img.freepik.com/free-vector/server-concept-illustration_114360-287.jpg?t=st=1715330170~exp=1715333770~hmac=d6a124f699ce9c0f69b920e33cb658723392f871fdbd46cb2b5efcf97605e970&w=740"
+              src="https://img.freepik.com/premium-vector/team-is-maintaining-lot-server-computers_18660-1622.jpg"
               alt="Catalogue-pana.svg"
             />
           </div>

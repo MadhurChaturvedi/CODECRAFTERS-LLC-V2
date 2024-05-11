@@ -17,9 +17,10 @@ function Team() {
         }}
       >
         <div className="flex items-center justify-center w-full h-full bg-gray-900/40 ">
-          <div className="text-center"
-           data-aos="fade-up"
-           data-aos-duration="2000"
+          <div
+            className="text-center"
+            data-aos="fade-up"
+            data-aos-duration="2000"
           >
             <h1 className="text-3xl font-semibold text-white lg:text-4xl">
               MEET OUR CEO'S & TEAM
@@ -27,7 +28,7 @@ function Team() {
           </div>
         </div>
       </div>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white ">
         <div className="container px-6 py-10 mx-auto">
           <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
             Our Executive Team
@@ -39,11 +40,11 @@ function Team() {
             similique, at omnis eligendi optio eos harum.
           </p>
 
-          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4 transition-all">
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
-              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent"
+              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 "
             >
               <img
                 className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
@@ -62,7 +63,7 @@ function Team() {
               <div className="flex mt-3 -mx-2">
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Reddit"
                 >
                   <svg
@@ -77,7 +78,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -92,7 +93,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -110,7 +111,7 @@ function Team() {
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
-              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent"
+              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 "
             >
               <img
                 className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
@@ -144,7 +145,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500  group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -159,7 +160,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500  group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -177,7 +178,7 @@ function Team() {
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
-              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent"
+              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 "
             >
               <img
                 className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
@@ -211,7 +212,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -226,7 +227,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -244,7 +245,7 @@ function Team() {
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
-              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent"
+              className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 "
             >
               <img
                 className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
@@ -278,7 +279,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -293,7 +294,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -310,9 +311,10 @@ function Team() {
           </div>
         </div>
       </section>
-      <section className="bg-white " 
-       data-aos="fade-up"
-       data-aos-duration="1000"
+      <section
+        className="bg-white "
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         <div className="container px-6 py-8 mx-auto">
           <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
@@ -331,9 +333,7 @@ function Team() {
                 <h3 className="text-lg font-medium text-gray-700 ">
                   Ahmed Omer
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 ">
-                  CEO
-                </span>
+                <span className="mt-1 font-medium text-gray-600 ">CEO</span>
               </div>
             </div>
 
@@ -345,9 +345,7 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 ">
-                  Jane Doe
-                </h3>
+                <h3 className="text-lg font-medium text-gray-700 ">Jane Doe</h3>
                 <span className="mt-1 font-medium text-gray-600 ">
                   Co-founder
                 </span>
@@ -365,9 +363,7 @@ function Team() {
                 <h3 className="text-lg font-medium text-gray-700 ">
                   Steve Ben
                 </h3>
-                <span className="mt-1 font-medium text-gray-600">
-                  UI/UX
-                </span>
+                <span className="mt-1 font-medium text-gray-600">UI/UX</span>
               </div>
             </div>
 
@@ -398,9 +394,7 @@ function Team() {
                 <h3 className="text-lg font-medium text-gray-700 ">
                   Ahmed Omer
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 ">
-                  CEO
-                </span>
+                <span className="mt-1 font-medium text-gray-600 ">CEO</span>
               </div>
             </div>
 
@@ -412,9 +406,7 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 ">
-                  Jane Doe
-                </h3>
+                <h3 className="text-lg font-medium text-gray-700 ">Jane Doe</h3>
                 <span className="mt-1 font-medium text-gray-600 ">
                   Co-founder
                 </span>
@@ -432,9 +424,7 @@ function Team() {
                 <h3 className="text-lg font-medium text-gray-700 ">
                   Steve Ben
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 ">
-                  UI/UX
-                </span>
+                <span className="mt-1 font-medium text-gray-600 ">UI/UX</span>
               </div>
             </div>
 

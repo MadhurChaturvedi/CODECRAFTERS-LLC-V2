@@ -22,15 +22,15 @@ function About() {
         }}
       >
         <div
-          className="flex items-center justify-center w-full h-full bg-gray-900/40"
+          className="flex items-center justify-center w-full h-full bg-gray-900/40 pb-12"
         >
           <div className="text-center" data-aos="fade-up"
           data-aos-duration="2000">
             <h1 className="text-3xl font-semibold text-white lg:text-4xl uppercase">
               Innovation and about us
             </h1>
-            <h5 className="text-2xl font-semibold text-white lg:text-2xl uppercase pb-4">
-              Innovation and about us
+            <h5 className="text-xl font-semibold text-white lg:text-2xl uppercase pb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima 
             </h5>
             <button className=" border p-4 w-36 text-white">Read more</button>
           </div>
@@ -73,7 +73,7 @@ function About() {
         </div>
       </div>
       <section
-        className="bg-[#f1f5f9] dark:bg-gray-900"
+        className="bg-[#f1f5f9] "
         data-aos="fade-down"
         data-aos-duration="1000"
       >
@@ -102,7 +102,7 @@ function About() {
                 />
               </div>
 
-              <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white text-center">
+              <h1 className="mt-4 text-xl font-semibold text-gray-800  text-center">
                 Default Taiwindcss Config
               </h1>
 
@@ -125,11 +125,11 @@ function About() {
                 />
               </div>
 
-              <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white text-center">
+              <h1 className="mt-4 text-xl font-semibold text-gray-800  text-center">
                 Fully Responsive Components
               </h1>
 
-              <p className="mt-2 text-gray-500 dark:text-gray-400 text-center">
+              <p className="mt-2 text-gray-500  text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida
                 sem feugiat. Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -147,11 +147,11 @@ function About() {
                 />
               </div>
 
-              <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white text-center">
+              <h1 className="mt-4 text-xl font-semibold text-gray-800  text-center">
                 Fully Responsive Components
               </h1>
 
-              <p className="mt-2 text-gray-500 dark:text-gray-400 text-center">
+              <p className="mt-2 text-gray-500  text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida
                 sem feugiat. Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -164,11 +164,11 @@ function About() {
         </div>
       </section>
       <section
-        className="bg-gray-100 dark:bg-gray-800 lg:py-12 lg:flex lg:justify-center"
+        className="bg-gray-100  lg:py-12 lg:flex lg:justify-center"
         data-aos="fade-down"
         data-aos-duration="1000"
       >
-        <div className="overflow-hidden bg-white dark:bg-gray-900 lg:mx-8 lg:flex lg:max-w-6xl lg:w-full lg:shadow-md lg:rounded-xl">
+        <div className="overflow-hidden bg-white lg:mx-8 lg:flex lg:max-w-6xl lg:w-full lg:shadow-md lg:rounded-xl">
           <div className="lg:w-1/2">
             <div
               className="h-64 bg-cover lg:h-full"
@@ -179,11 +179,11 @@ function About() {
           </div>
 
           <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
+            <h2 className="text-2xl font-semibold text-gray-800  md:text-3xl">
               Build Your New <span className="text-blue-500">Idea</span>
             </h2>
 
-            <p className="mt-4 text-gray-500 dark:text-gray-300">
+            <p className="mt-4 text-gray-500 ">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
               modi reprehenderit vitae exercitationem aliquid dolores ullam
               temporibus enim expedita aperiam mollitia iure consectetur dicta

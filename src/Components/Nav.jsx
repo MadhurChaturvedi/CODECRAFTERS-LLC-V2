@@ -100,7 +100,7 @@
 //           }`}
 //         >
 //           <div className="flex flex-col md:flex-row md:mx-6"  id="select-nav"
-          
+
 //           >
 //             <Link
 //               to={"/"}
@@ -145,7 +145,7 @@
 //               className={`my-2 ${
 //                 showBackground ? "text-gray-900" : "text-gray-700 "
 //               }   transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-            
+
 //             >
 //               Team
 //             </Link>
@@ -159,7 +159,7 @@
 //               News
 //             </Link>
 //           </div>
-          
+
 //         </div>
 //         <div className=" md:flex hidden gap-2"  id="select-nav">
 //           <button
@@ -216,7 +216,9 @@ const Nav = () => {
   };
 
   return (
-    <nav className={`bg-white transition-all text-black sticky top-0 left-0 z-40`}>
+    <nav
+      className={`bg-white transition-all text-black sticky top-0 left-0 z-40`}
+    >
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center border-b-2">
         <div className="flex items-center justify-between">
           <Link
@@ -246,7 +248,11 @@ const Nav = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 8h16M4 16h16"
+                  />
                 </svg>
               ) : (
                 <svg
@@ -257,7 +263,11 @@ const Nav = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               )}
             </button>
@@ -290,7 +300,7 @@ const Nav = () => {
               About
             </Link>
             <Link
-              to={'contact'}
+              to={"contact"}
               className={`my-2 ${
                 showBackground ? "text-gray-900" : "text-gray-700"
               } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
@@ -330,13 +340,13 @@ const Nav = () => {
         <div className="md:flex hidden gap-2">
           <button
             type="button"
-            className="focus:outline-none text-white bg-purple-400 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+            className="focus:outline-none text-white bg-purple-400 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
           >
             Login
           </button>
           <button
             type="button"
-            className="focus:outline-none border-2 text-black bg-neutral-100 hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+            className="focus:outline-none border-2  bg-purple-400 hover:bg-purple-800 hover:text-white focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 "
           >
             Register
           </button>

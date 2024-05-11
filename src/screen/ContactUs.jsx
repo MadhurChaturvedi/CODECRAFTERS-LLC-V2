@@ -17,25 +17,25 @@ function ContactUs() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.229155004915!2d-74.6358745!3d40.5144258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ea4c0caed905%3A0x2e32209e21f9cac!2s436%20Brookside%20Ln%2C%20Hillsborough%20Township%2C%20NJ%2008844%2C%20USA!5e0!3m2!1sen!2sin!4v1715426680733!5m2!1sen!2sin"
         ></iframe>
       </div>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white">
         <div className="container px-6 py-12 mx-auto">
           <div className="text-center">
             <p className="font-medium text-blue-500 dark:text-blue-400">
               Contact us
             </p>
 
-            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
+            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl ">
               Get in touch
             </h1>
 
-            <p className="mt-3 text-gray-500 dark:text-gray-400">
+            <p className="mt-3 text-gray-500 ">
               Our friendly team is always here to chat.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
             <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -52,10 +52,10 @@ function ContactUs() {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-lg font-medium text-gray-800 ">
                 Email
               </h2>
-              <p className="mt-2 text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-gray-500 ">
                 Our friendly team is here to help.
               </p>
               <p className="mt-2 text-blue-500 dark:text-blue-400">
@@ -64,7 +64,7 @@ function ContactUs() {
             </div>
 
             <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -86,10 +86,10 @@ function ContactUs() {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-lg font-medium text-gray-800 ">
                 Office
               </h2>
-              <p className="mt-2 text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-gray-500 ">
                 Come say hello at our office HQ.
               </p>
               <p className="mt-2 text-blue-500 dark:text-blue-400">
@@ -98,7 +98,7 @@ function ContactUs() {
             </div>
 
             <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -115,10 +115,10 @@ function ContactUs() {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-lg font-medium text-gray-800 ">
                 Phone
               </h2>
-              <p className="mt-2 text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-gray-500 ">
                 Mon-Fri from 8am to 5pm.
               </p>
               <p className="mt-2 text-blue-500 dark:text-blue-400">
