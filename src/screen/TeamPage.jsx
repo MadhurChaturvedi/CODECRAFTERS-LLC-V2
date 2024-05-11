@@ -1,8 +1,14 @@
 import React from 'react'
 import Team from '../Components/Team'
+import ScrollToTop from "../Components/ScrollToTop";
+
 function TeamPage() {
   return (
-    <Team />
+    <div>
+      <ScrollToTop />
+      <Team />
+    </div>
+   
   )
 }
 

@@ -17,7 +17,10 @@ function Team() {
         }}
       >
         <div className="flex items-center justify-center w-full h-full bg-gray-900/40 ">
-          <div className="text-center">
+          <div className="text-center"
+           data-aos="fade-up"
+           data-aos-duration="2000"
+          >
             <h1 className="text-3xl font-semibold text-white lg:text-4xl">
               MEET OUR CEO'S & TEAM
             </h1>

@@ -2,12 +2,15 @@ import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ScrollToTop from "../Components/ScrollToTop";
+
 function News() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <>
+    <div>
+    <ScrollToTop />
       <div
         className="w-full bg-center bg-cover h-[26rem]"
         style={{
@@ -16,7 +19,10 @@ function News() {
         }}
       >
         <div className="flex items-center justify-center w-full h-full bg-gray-900/40">
-          <div className="text-center">
+          <div className="text-center"
+          data-aos="fade-down"
+          data-aos-duration="2000"
+          >
             <h1 className="text-3xl font-semibold text-white lg:text-4xl">
               LATEST NEWS
             </h1>
@@ -111,7 +117,7 @@ function News() {
         ))}
       </div>
     </div>
-    </>
+    </div>
   );
 }
 

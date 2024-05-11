@@ -2,6 +2,8 @@ import React from 'react';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ScrollToTop from "../Components/ScrollToTop";
+
 
 const ComingSoon = () => {
   useEffect(() => {
@@ -10,6 +12,7 @@ const ComingSoon = () => {
 
   return (
     <section className="w-full min-h-screen bg-white dark:bg-gray-900" x-data="{ isOpen: false }">
+      <ScrollToTop />
       <div className="container relative flex flex-col min-h-screen px-6 py-8 mx-auto">
         <section className="flex items-center flex-1"
         data-aos="fade-up"
