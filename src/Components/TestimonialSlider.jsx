@@ -28,12 +28,12 @@ const TestimonialSlider = () => {
     };
 
     return (
-        <section className="bg-white dark:bg-gray-900" 
+        <section className="bg-white " 
         data-aos="fade-down"
         data-aos-duration="2000"
         >
             <div className="container px-6 py-10 mx-auto">
-                <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+                <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
                     What clients are saying
                 </h1>
                 <div className="flex justify-center mx-auto mt-6">
@@ -54,7 +54,7 @@ const TestimonialSlider = () => {
                         <div className="flex flex-col items-center justify-center mt-8">
                             <img className="object-cover rounded-full w-14 h-14" src={testimonials[currentSlide].imageSrc} alt="" />
                             <div className="mt-4 text-center">
-                                <h1 className="font-semibold text-gray-800 dark:text-white">{testimonials[currentSlide].author}</h1>
+                                <h1 className="font-semibold text-gray-800 ">{testimonials[currentSlide].author}</h1>
                                 <span className="text-sm text-gray-500 dark:text-gray-400">{testimonials[currentSlide].occupation}</span>
                             </div>
                         </div>

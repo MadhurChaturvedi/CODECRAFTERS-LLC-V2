@@ -29,11 +29,11 @@ function Team() {
       </div>
       <section className="bg-white dark:bg-gray-900">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+          <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
             Our Executive Team
           </h1>
 
-          <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+          <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             incidunt ex placeat modi magni quia error alias, adipisci rem
             similique, at omnis eligendi optio eos harum.
@@ -51,7 +51,7 @@ function Team() {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                 arthur melo
               </h1>
 
@@ -62,7 +62,7 @@ function Team() {
               <div className="flex mt-3 -mx-2">
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Reddit"
                 >
                   <svg
@@ -77,7 +77,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -92,7 +92,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -118,18 +118,18 @@ function Team() {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                 Amelia. Anderson
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 capitalize  group-hover:text-gray-300">
                 Lead Developer
               </p>
 
               <div className="flex mt-3 -mx-2">
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                   aria-label="Reddit"
                 >
                   <svg
@@ -185,18 +185,18 @@ function Team() {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                 Olivia Wathan
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 capitalize  group-hover:text-gray-300">
                 Lead designer
               </p>
 
               <div className="flex mt-3 -mx-2">
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Reddit"
                 >
                   <svg
@@ -211,7 +211,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -226,7 +226,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -252,18 +252,18 @@ function Team() {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                 John Doe
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 capitalize  group-hover:text-gray-300">
                 Full stack developer
               </p>
 
               <div className="flex mt-3 -mx-2">
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Reddit"
                 >
                   <svg
@@ -278,7 +278,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Facebook"
                 >
                   <svg
@@ -293,7 +293,7 @@ function Team() {
 
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600  hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                   aria-label="Github"
                 >
                   <svg
@@ -310,12 +310,12 @@ function Team() {
           </div>
         </div>
       </section>
-      <section className="bg-white dark:bg-gray-900" 
+      <section className="bg-white " 
        data-aos="fade-up"
        data-aos-duration="1000"
       >
         <div className="container px-6 py-8 mx-auto">
-          <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+          <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
             Meet Our Software and Marketing Team
           </h2>
 
@@ -328,10 +328,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Ahmed Omer
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   CEO
                 </span>
               </div>
@@ -345,10 +345,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Jane Doe
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   Co-founder
                 </span>
               </div>
@@ -362,10 +362,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Steve Ben
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600">
                   UI/UX
                 </span>
               </div>
@@ -379,10 +379,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Patterson Johnson
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   Software Engineer
                 </span>
               </div>
@@ -395,10 +395,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Ahmed Omer
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   CEO
                 </span>
               </div>
@@ -412,10 +412,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Jane Doe
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   Co-founder
                 </span>
               </div>
@@ -429,10 +429,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 ">
                   Steve Ben
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   UI/UX
                 </span>
               </div>
@@ -446,10 +446,10 @@ function Team() {
               />
 
               <div className="mt-2">
-                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">
+                <h3 className="text-lg font-medium text-gray-700 0">
                   Patterson Johnson
                 </h3>
-                <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                <span className="mt-1 font-medium text-gray-600 ">
                   Software Engineer
                 </span>
               </div>
