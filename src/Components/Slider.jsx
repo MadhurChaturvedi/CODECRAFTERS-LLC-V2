@@ -64,7 +64,7 @@ function Slides() {
             {slides[currentIndex].text}
           </h1>
           <p class="mb-6 text-lg font-normal  lg:text-xl sm:px-16 xl:px-48 text-white transition-all">
-            Here at Flowbite we focus on markets where technology, innovation,
+            Here at CODECRAFTERS LLC we focus on markets where technology, innovation,
             and capital can unlock long-term value and drive economic growth.
           </p>
           <a
