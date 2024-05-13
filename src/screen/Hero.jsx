@@ -29,7 +29,7 @@ function Hero() {
                 Solutions
               </h1>
 
-              <p className="mt-3 text-gray-600 dark:text-gray-400 text-xl">
+              <p className="mt-3 text-gray-600 dark:text-gray-400 ">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
                 beatae error laborum ab amet sunt recusandae? Reiciendis natus
                 perspiciatis optio. Lorem ipsum dolor sit amet consectetur
