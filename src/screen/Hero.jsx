@@ -6,13 +6,14 @@ import TestimonialSlider from "../Components/TestimonialSlider.jsx";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "../Components/ScrollToTop";
+import { TypeAnimation } from "react-type-animation";
 
 function Hero() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <>
+    <div>
       <ScrollToTop />
       <Slides />
 
@@ -25,9 +26,23 @@ function Hero() {
             data-aos-duration="1000"
           >
             <div className="lg:max-w-lg">
-              <h1 className="text-3xl font-semibold text-gray-800  lg:text-4xl uppercase">
-                Solutions
-              </h1>
+              {/* <h1 className="text-3xl font-semibold text-gray-800  lg:text-4xl uppercase"> */}
+                <TypeAnimation
+                className="text-3xl font-semibold text-gray-800  lg:text-4xl uppercase"
+                  sequence={[
+                    "Problem",
+                    800,
+                    "Solution",,
+                    800,
+                    "Innovation",
+                    800,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  style={{ fontSize: "2em", display: "inline-block" }}
+                  repeat={Infinity}
+                />
+              {/* </h1> */}
 
               <p className="mt-3 text-gray-600 dark:text-gray-400 ">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
@@ -59,7 +74,7 @@ function Hero() {
       </div>
       <TestimonialSlider />
       <Client />
-    </>
+    </div>
   );
 }
 
