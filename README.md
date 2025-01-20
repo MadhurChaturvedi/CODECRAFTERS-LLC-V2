@@ -20,13 +20,15 @@ Use npm libraries or write custom JavaScript to add interactivity and dynamic be
 
 # Optimization:
 
-Optimize your code and assets for performance. Minify CSS and JavaScript files, optimize images, and utilize techniques like lazy loading for faster loading times.
+Optimize your code and assets for performance. Minify CSS and JavaScript files, optimize images and utilize techniques like lazy loading for faster loading times.
 # Testing:
 
-Test your portfolio across different browsers and devices to ensure compatibility and responsiveness.
+Please test your portfolio across different browsers and devices to make sure it's compatible and responsive.
 # Deployment:
 
-Once your portfolio is ready, deploy it to a web hosting service of your choice. You can use platforms like Netlify, Vercel, GitHub Pages, or traditional web hosting services.
+Once your portfolio is ready, deploy it to a web hosting service. You can use platforms like Netlify, Vercel, GitHub Pages, or traditional web hosting services.
 # Maintenance:
 
 Regularly update and maintain your portfolio as needed. This may include adding new projects, updating content, or incorporating new features.
+
+Freelance project
