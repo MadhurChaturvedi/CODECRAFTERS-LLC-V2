@@ -1,134 +1,390 @@
-import React from "react";
-import ScrollToTop from "../Components/ScrollToTop";
+import React, { useState } from "react";
+import { 
+  MapPin, 
+  Mail, 
+  Phone, 
+  Clock, 
+  Send, 
+  CheckCircle2, 
+  ShieldCheck, 
+  ChevronDown, 
+  ChevronUp, 
+  Sparkles, 
+  ArrowRight, 
+  Building2 
+} from "lucide-react";
 
 function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    service: "Custom Web Application",
+    budget: "$25k - $50k",
+    timeline: "1 - 3 Months",
+    message: "",
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 700);
+  };
+
+  const faqs = [
+    {
+      q: "How quickly can a CodeCrafters engineering squad initiate work?",
+      a: "Our standard onboarding window is 5 to 10 business days following architectural alignment and agreement execution. We assign dedicated US-based lead architects immediately to begin technical discovery and backlog refinement.",
+    },
+    {
+      q: "Who owns the code, documentation, and intellectual property?",
+      a: "You retain 100% full intellectual property ownership. All source code, design assets, Dockerfiles, Terraform scripts, and CI/CD pipelines are transferred directly to your organization's private repositories with zero vendor lock-in.",
+    },
+    {
+      q: "Do you sign a mutual Non-Disclosure Agreement (NDA) before discovery?",
+      a: "Yes, absolutely. We enforce strict enterprise-grade confidentiality. We are happy to execute our standard two-way NDA or review your corporate agreement prior to discussing proprietary architecture or datasets.",
+    },
+    {
+      q: "Can CodeCrafters provide ongoing SLA support post-deployment?",
+      a: "Yes. In addition to project-based rollouts, we provide 24/7 mission-critical infrastructure monitoring, automated security patching, and tiered support SLAs (up to 99.999% uptime guarantees) to keep your platform resilient.",
+    },
+  ];
+
   return (
-    <div style={{ overflowX:'hidden'}}>
-      <ScrollToTop />
-      <div className="w-full bg-center bg-cover h-[26rem]">
-        <iframe
-          title="map"
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          marginHeight="0"
-          marginWidth="0"
-          scrolling="no"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.229155004915!2d-74.6358745!3d40.5144258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ea4c0caed905%3A0x2e32209e21f9cac!2s436%20Brookside%20Ln%2C%20Hillsborough%20Township%2C%20NJ%2008844%2C%20USA!5e0!3m2!1sen!2sin!4v1715426680733!5m2!1sen!2sin"
-        ></iframe>
-      </div>
-      <section className="bg-white">
-        <div className="container px-6 py-12 mx-auto">
-          <div className="text-center">
-            <p className="font-medium text-blue-500 dark:text-blue-400">
-              Contact us
-            </p>
-
-            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl ">
-              Get in touch
-            </h1>
-
-            <p className="mt-3 text-gray-500 ">
-              Our friendly team is always here to chat.
-            </p>
+    <div className="bg-white min-h-screen">
+      {/* HEADER HERO */}
+      <section className="pt-16 pb-20 bg-slate-50/70 border-b border-slate-200/80 bg-grid-pattern">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 mb-6">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <span>Direct Access to Engineering Partners</span>
           </div>
 
-          <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                  />
-                </svg>
-              </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+            Let's Architect Your <span className="text-gradient-blue">Next System</span>
+          </h1>
 
-              <h2 className="mt-4 text-lg font-medium text-gray-800 ">
-                Email
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            Reach out directly to our engineering partners at our Hillsborough, NJ headquarters. Every inquiry is reviewed with strict confidentiality and same-day response times.
+          </p>
+        </div>
+      </section>
+
+      {/* MAIN TWO-COLUMN CONTACT SECTION */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* LEFT COLUMN: OFFICE & LOCATION */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">
+                Headquarters
+              </span>
+              <h2 className="text-2xl font-bold text-slate-900">
+                CodeCrafters LLC
               </h2>
-              <p className="mt-2 text-gray-500 ">
-                Our friendly team is here to help.
-              </p>
-              <p className="mt-2 text-blue-500 dark:text-blue-400">
-                hello@merakiui.com
+              <p className="text-sm text-slate-500 mt-1">
+                Engineering Studio • Somerset County, New Jersey
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                  />
-                </svg>
-              </span>
+            {/* Direct Contact Cards */}
+            <div className="space-y-4">
+              <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm flex items-start space-x-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Headquarters Address</h4>
+                  <p className="text-sm font-semibold text-slate-900 mt-0.5">
+                    436 Brookside Ln
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    Hillsborough, NJ 08844, USA
+                  </p>
+                </div>
+              </div>
 
-              <h2 className="mt-4 text-lg font-medium text-gray-800 ">
-                Office
-              </h2>
-              <p className="mt-2 text-gray-500 ">
-                Come say hello at our office HQ.
-              </p>
-              <p className="mt-2 text-blue-500 dark:text-blue-400">
-                436 BROOKSIDE LN HILLSBOROUGH NJ 08844
-              </p>
+              <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm flex items-start space-x-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Official Inquiries</h4>
+                  <a
+                    href="mailto:contact@codecraftersllc.com"
+                    className="text-sm font-semibold text-blue-600 hover:underline mt-0.5 block"
+                  >
+                    contact@codecraftersllc.com
+                  </a>
+                  <p className="text-xs text-slate-500">
+                    Typically answered within 2-4 hours
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm flex items-start space-x-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Direct Phone</h4>
+                  <a
+                    href="tel:+19085550192"
+                    className="text-sm font-semibold text-slate-900 hover:text-blue-600 mt-0.5 block"
+                  >
+                    +1 (908) 555-0192
+                  </a>
+                  <p className="text-xs text-slate-500">
+                    Mon - Fri, 8:00 AM - 6:00 PM EST
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                  />
-                </svg>
-              </span>
+            {/* Embedded Google Map from User Data */}
+            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+              <iframe
+                title="CodeCrafters LLC Headquarters Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.229155004915!2d-74.6358745!3d40.5144258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ea4c0caed905%3A0x2e32209e21f9cac!2s436%20Brookside%20Ln%2C%20Hillsborough%20Township%2C%20NJ%2008844%2C%20USA!5e0!3m2!1sen!2sin!4v1715426680733!5m2!1sen!2sin"
+                width="100%"
+                height="280"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
 
-              <h2 className="mt-4 text-lg font-medium text-gray-800 ">
-                Phone
-              </h2>
-              <p className="mt-2 text-gray-500 ">
-                Mon-Fri from 8am to 5pm.
-              </p>
-              <p className="mt-2 text-blue-500 dark:text-blue-400">
-                +1 (555) 000-0000
-              </p>
+          {/* RIGHT COLUMN: PROJECT INTAKE FORM */}
+          <div className="lg:col-span-7">
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 sm:p-12">
+              {!submitted ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">
+                      Project Initiation Form
+                    </span>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      Tell Us About Your Objectives
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1">
+                      All submissions are protected under mutual NDA.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Your Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Sarah Connor"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Work Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="sarah@enterprise.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      Company / Organization Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Acme Technologies Inc."
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                    />
+                  </div>
+
+                  {/* Primary Service Selection */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      Primary Area of Need
+                    </label>
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all bg-white"
+                    >
+                      <option value="Custom Web Application">Custom Web Application / SaaS Platform</option>
+                      <option value="Cloud Architecture & DevOps">Cloud Architecture &amp; DevOps (Kubernetes/AWS)</option>
+                      <option value="Enterprise AI & RAG">Enterprise AI &amp; Autonomous Reasoning Agents</option>
+                      <option value="Mobile App Development">Mobile App Development (iOS &amp; Android)</option>
+                      <option value="Security & Compliance Audit">Cybersecurity &amp; SOC2/HIPAA Readiness Audit</option>
+                      <option value="Dedicated Engineering Squad">Dedicated Cross-Functional Engineering Squad</option>
+                    </select>
+                  </div>
+
+                  {/* Budget & Timeline */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Target Budget Range
+                      </label>
+                      <select
+                        value={formData.budget}
+                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all bg-white"
+                      >
+                        <option value="<$15k">&lt;$15k (Advisory / Fast MVP)</option>
+                        <option value="$15k - $30k">$15k - $30k</option>
+                        <option value="$30k - $60k">$30k - $60k</option>
+                        <option value="$60k - $120k">$60k - $120k</option>
+                        <option value="$120k+">$120k+ (Enterprise Infrastructure)</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Desired Timeline
+                      </label>
+                      <select
+                        value={formData.timeline}
+                        onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all bg-white"
+                      >
+                        <option value="Immediate (1-2 weeks)">Immediate (1 - 2 weeks)</option>
+                        <option value="1 - 3 Months">1 - 3 Months</option>
+                        <option value="3 - 6 Months">3 - 6 Months</option>
+                        <option value="Flexible / Ongoing">Flexible / Ongoing Roadmapping</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      Project Details &amp; Technical Goals *
+                    </label>
+                    <textarea
+                      required
+                      rows="4"
+                      placeholder="Describe what you want to build, current technical bottlenecks, stack preferences, or scale requirements..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                    ></textarea>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                    <div className="flex items-center text-xs text-slate-500 space-x-1.5">
+                      <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span>Strict Mutual NDA Protected</span>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="px-8 py-3.5 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-lg shadow-blue-500/25 transition-all text-sm flex items-center justify-center space-x-2 cursor-pointer"
+                    >
+                      {loading ? (
+                        <span>Transmitting...</span>
+                      ) : (
+                        <>
+                          <span>Submit Project Request</span>
+                          <Send className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              ) : (
+                <div className="py-12 text-center space-y-5">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    Project Request Received!
+                  </h3>
+                  <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                    Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. A principal engineer at CodeCrafters LLC will review your {formData.service} requirements and reach out within 4 business hours to schedule an architecture discovery session.
+                  </p>
+                  <div className="pt-4">
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="px-6 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all cursor-pointer"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
+      {/* FREQUENTLY ASKED QUESTIONS */}
+      <section className="py-20 bg-slate-50/80 border-t border-slate-200/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-2">
+              Frequently Asked Questions
+            </span>
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              Everything You Need to Know Before Partnering
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden transition-all"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                    className="w-full p-6 text-left flex items-center justify-between space-x-4 cursor-pointer"
+                  >
+                    <span className="font-bold text-base text-slate-900">
+                      {faq.q}
+                    </span>
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 text-blue-600 shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

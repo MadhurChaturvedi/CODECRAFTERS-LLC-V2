@@ -1,15 +1,10 @@
-import React from 'react'
-import Team from '../Components/Team'
-import ScrollToTop from "../Components/ScrollToTop";
+import React from 'react';
+import Team from '../Components/Team';
 
-function TeamPage() {
+function TeamPage({ onOpenConsultation }) {
   return (
-    <div>
-      <ScrollToTop />
-      <Team />
-    </div>
-   
-  )
+    <Team onOpenConsultation={onOpenConsultation} />
+  );
 }
 
-export default TeamPage
+export default TeamPage;

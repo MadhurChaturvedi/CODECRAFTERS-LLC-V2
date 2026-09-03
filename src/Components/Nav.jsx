@@ -1,358 +1,173 @@
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import "./nav.css"
-
-// const Nav = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [showBackground, setShowBackground] = useState(false);
-//   const TOP_OFFSET = 50;
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       console.log(window.scrollY);
-//       if (window.scrollY >= TOP_OFFSET) {
-//         setShowBackground(true);
-//       } else {
-//         setShowBackground(false);
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-//   };
-
-//   return (
-//     <nav
-//       className={` bg-white  transition-all  text-black sticky top-0 left-0 z-40`}
-//     >
-//       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center border-b-2">
-//         <div className="flex items-center justify-between">
-//           <Link
-//            id="select-nav"
-//             to={"/"}
-//             className={`w-auto h-6 sm:h-7 text-xl  ${
-//               showBackground ? " text-gray-900" : "bg-zinc-100"
-//             } font-extrabold`}
-//           >
-//             {/* <img
-//               className="w-auto h-6 sm:h-7"
-//               src="https://merakiui.com/images/full-logo.svg"
-//               alt=""
-//             /> */}
-//             CODECRAFTERS LLC
-//           </Link>
-
-//           {/* Mobile menu button */}
-//           <div className="flex md:hidden">
-//             <button
-//               onClick={toggleMenu}
-//               type="button"
-//               className="text-gray-500  hover:text-gray-600"
-//               aria-label="toggle menu"
-//             >
-//               {!isOpen ? (
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-6 h-6"
-//                   fill="none"
-//                   viewBox="0 0 24 24"
-//                   stroke="currentColor"
-//                   strokeWidth="2"
-//                 >
-//                   <path
-//                     strokeLinecap="round"
-//                     strokeLinejoin="round"
-//                     d="M4 8h16M4 16h16"
-//                   />
-//                 </svg>
-//               ) : (
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-6 h-6"
-//                   fill="none"
-//                   viewBox="0 0 24 24"
-//                   stroke="currentColor"
-//                   strokeWidth="2"
-//                 >
-//                   <path
-//                     strokeLinecap="round"
-//                     strokeLinejoin="round"
-//                     d="M6 18L18 6M6 6l12 12"
-//                   />
-//                 </svg>
-//               )}
-//             </button>
-//           </div>
-//         </div>
-
-//         {/* Mobile Menu */}
-//         <div
-//           className={`absolute mt-4 inset-x-0  bg-slate-50 md:border-none  border-b-2 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out  md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center ${
-//             isOpen
-//               ? "translate-x-0 opacity-100 "
-//               : "opacity-0 -translate-x-full"
-//           }`}
-//         >
-//           <div className="flex flex-col md:flex-row md:mx-6"  id="select-nav"
-
-//           >
-//             <Link
-//               to={"/"}
-//               className={`my-2 ${
-//                 showBackground ? "text-gray-900" : "text-gray-700"
-//               }  transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-//               href="#"
-//             >
-//               Home
-//             </Link>
-//             <Link
-//               to={"/about"}
-//               className={`my-2 ${
-//                 showBackground
-//                   ? "text-gray-900"
-//                   : `${showBackground ? " text-gray-900" : "text-gray-700"} `
-//               }  =  transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-//               href="#"
-//             >
-//               About
-//             </Link>
-//             <Link
-//                to={'contact'}
-//               className={`my-2 ${
-//                 showBackground ? "text-gray-900" : "text-gray-700"
-//               } transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-//               href="#"
-//             >
-//               Contact
-//             </Link>
-//             <Link
-//               to={"/services"}
-//               className={`my-2 ${
-//                 showBackground ? "text-gray-900" : "text-gray-700 "
-//               }   transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-//               href="#"
-//             >
-//               Service
-//             </Link>
-//             <Link
-//               to={"/team"}
-//               className={`my-2 ${
-//                 showBackground ? "text-gray-900" : "text-gray-700 "
-//               }   transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-
-//             >
-//               Team
-//             </Link>
-//             <Link
-//               to={"/news"}
-//               className={`my-2 ${
-//                 showBackground ? "text-gray-900" : "text-gray-700 "
-//               }   transition-colors duration-300 transform  hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-//               href="#"
-//             >
-//               News
-//             </Link>
-//           </div>
-
-//         </div>
-//         <div className=" md:flex hidden gap-2"  id="select-nav">
-//           <button
-//             type="button"
-//             className="focus:outline-none text-white bg-purple-400 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-//           >
-//             Login
-//           </button>
-//           <button
-//             type="button"
-//             className="focus:outline-none border-2 text-black bg-neutral-100 hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-//           >
-//             Register
-//           </button>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Nav;
-
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./nav.css";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ArrowRight, Sparkles, Code2, PhoneCall } from "lucide-react";
 
-const Nav = () => {
+const Nav = ({ onOpenConsultation }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showBackground, setShowBackground] = useState(false);
-  const TOP_OFFSET = 50;
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= TOP_OFFSET) {
-        setShowBackground(true);
-      } else {
-        setShowBackground(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
-  const closeMenu = () => {
-    setIsOpen(false);
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Team", path: "/team" },
+    { name: "News & Insights", path: "/news" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const isActive = (path) => {
+    if (path === "/" && location.pathname !== "/") return false;
+    return location.pathname.startsWith(path);
   };
 
   return (
-    <nav
-      className={`bg-white transition-all text-black sticky top-0 left-0 z-40`}
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border-b border-slate-200/90 py-3"
+          : "bg-white/85 backdrop-blur-sm border-b border-slate-100 py-4"
+      }`}
     >
-      <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center border-b-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link
-            to={"/"}
-            className={`w-auto h-6 sm:h-7 text-xl ${
-              showBackground ? "text-gray-900" : "bg-zinc-100"
-            } font-extrabold`}
-            onClick={closeMenu} // Close menu when clicking the logo
+            to="/"
+            onClick={closeMenu}
+            className="group flex items-center space-x-3 text-slate-900 focus:outline-none"
           >
-            CODECRAFTERS LLC
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
+              <Code2 className="w-5 h-5" />
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center space-x-1.5">
+                <span className="font-extrabold tracking-tight text-lg text-slate-900 font-sans">
+                  CODECRAFTERS
+                </span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/60 uppercase">
+                  LLC
+                </span>
+              </div>
+              <span className="text-[10px] tracking-wider uppercase font-semibold text-slate-400">
+                Software Engineering &amp; Cloud
+              </span>
+            </div>
           </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+            {navLinks.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-150 ${
+                    active
+                      ? "text-blue-600 bg-blue-50/70 font-semibold"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                  }`}
+                >
+                  {link.name}
+                  {active && (
+                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-blue-600 rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Action CTAs */}
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              <PhoneCall className="w-4 h-4 mr-1.5 text-slate-400" />
+              <span>Talk to an Engineer</span>
+            </Link>
+
+            <button
+              onClick={onOpenConsultation}
+              className="inline-flex items-center px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 active:scale-95 rounded-xl shadow-md shadow-blue-500/25 transition-all duration-200 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 mr-1.5 text-blue-200" />
+              <span>Start a Project</span>
+            </button>
+          </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden">
             <button
               onClick={toggleMenu}
               type="button"
-              className="text-gray-500 hover:text-gray-600"
-              aria-label="toggle menu"
+              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              aria-label="Toggle Navigation"
             >
-              {!isOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 8h16M4 16h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`absolute mt-4 inset-x-0 bg-slate-50 md:border-none border-b-2 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center ${
-            isOpen ? "translate-x-0 opacity-100" : "opacity-0 -translate-x-full"
-          }`}
-        >
-          <div className="flex flex-col md:flex-row md:mx-6">
-            <Link
-              to={"/"}
-              className={`my-2 ${
-                showBackground ? "text-gray-900" : "text-gray-700"
-              } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-              onClick={closeMenu} // Close menu when clicking a link
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden border-b border-slate-200 bg-white/98 backdrop-blur-xl animate-fadeIn px-4 pt-3 pb-6 space-y-3">
+          <div className="flex flex-col space-y-1">
+            {navLinks.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  onClick={closeMenu}
+                  className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                    active
+                      ? "text-blue-600 bg-blue-50 font-semibold"
+                      : "text-slate-700 hover:bg-slate-50"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 flex flex-col space-y-2">
+            <button
+              onClick={() => {
+                closeMenu();
+                if (onOpenConsultation) onOpenConsultation();
+              }}
+              className="w-full py-3 px-4 text-center font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md shadow-blue-500/20 transition-all flex items-center justify-center space-x-2"
             >
-              Home
-            </Link>
+              <Sparkles className="w-4 h-4 text-blue-200" />
+              <span>Start a Project</span>
+            </button>
+
             <Link
-              to={"/about"}
-              className={`my-2 ${
-                showBackground ? "text-gray-900" : "text-gray-700"
-              } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-              onClick={closeMenu} // Close menu when clicking a link
+              to="/contact"
+              onClick={closeMenu}
+              className="w-full py-2.5 text-center text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-xl transition-all"
             >
-              About
-            </Link>
-            <Link
-              to={"contact"}
-              className={`my-2 ${
-                showBackground ? "text-gray-900" : "text-gray-700"
-              } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-              onClick={closeMenu} // Close menu when clicking a link
-            >
-              Contact
-            </Link>
-            <Link
-              to={"/services"}
-              className={`my-2 ${
-                showBackground ? "text-gray-900" : "text-gray-700"
-              } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-              onClick={closeMenu} // Close menu when clicking a link
-            >
-              Service
-            </Link>
-            <Link
-              to={"/team"}
-              className={`my-2 ${
-                showBackground ? "text-gray-900" : "text-gray-700"
-              } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-              onClick={closeMenu} // Close menu when clicking a link
-            >
-              Team
-            </Link>
-            <Link
-              to={"/news"}
-              className={`my-2 ${
-                showBackground ? "text-gray-900" : "text-gray-700"
-              } transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0`}
-              onClick={closeMenu} // Close menu when clicking a link
-            >
-              News
+              Contact Hillsborough Office (NJ)
             </Link>
           </div>
         </div>
-        <div className="md:flex hidden gap-2">
-          <button
-            type="button"
-            className="focus:outline-none text-white bg-purple-400 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
-          >
-            Login
-          </button>
-          <button
-            type="button"
-            className="focus:outline-none border-2  bg-purple-400 hover:bg-purple-800 hover:text-white focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 "
-          >
-            Register
-          </button>
-        </div>
-      </div>
-    </nav>
+      )}
+    </header>
   );
 };
 
