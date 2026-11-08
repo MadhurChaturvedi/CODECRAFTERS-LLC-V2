@@ -8,18 +8,10 @@ import {
   Palette, 
   ShieldCheck, 
   CheckCircle2, 
-  ArrowRight, 
-  Calculator, 
-  Sparkles, 
-  Terminal, 
-  Layers, 
-  Zap, 
-  Clock, 
-  Users 
+  ChevronRight 
 } from "lucide-react";
 
 export default function Services({ onOpenConsultation }) {
-  // Project Estimator State
   const [projectType, setProjectType] = useState("web");
   const [scale, setScale] = useState("growth");
   const [timeline, setTimeline] = useState("standard");
@@ -31,15 +23,15 @@ export default function Services({ onOpenConsultation }) {
       icon: Code2,
       subtitle: "High-throughput React, Next.js, Node.js & Python platforms",
       description:
-        "We build blazing-fast, resilient web applications that handle millions of requests without breaking a sweat. Built on modular micro-frontend and microservice architectures with sub-20ms edge latency.",
+        "We build resilient web platforms engineered to handle high concurrent load with sub-millisecond edge response times. Architected on modular micro-frontends with clean API gateways.",
       deliverables: [
-        "Single-Page & Server-Side Rendered Apps (React 18 / Next.js)",
+        "Server-Side Rendered Next.js & React 18 Frontends",
         "High-performance REST & GraphQL API Gateways",
-        "Distributed database design (PostgreSQL, MongoDB, Redis)",
-        "Real-time Websocket pipelines & streaming dashboards",
-        "Continuous automated unit & end-to-end test coverage",
+        "Distributed Database Clusters (PostgreSQL, Redis)",
+        "Real-time WebSocket event streaming",
+        "Automated unit & end-to-end test suites (90%+ coverage)",
       ],
-      stack: ["React", "Next.js", "Node.js", "Python FastAPI", "PostgreSQL", "Redis"],
+      stack: ["React 18", "Next.js", "Node.js", "Python FastAPI", "PostgreSQL", "Redis"],
     },
     {
       id: "cloud",
@@ -47,11 +39,11 @@ export default function Services({ onOpenConsultation }) {
       icon: Cloud,
       subtitle: "Multi-region AWS, GCP & Azure infrastructure",
       description:
-        "Transform messy server setups into resilient, auto-scaling Kubernetes clusters with zero-downtime CI/CD pipelines. We architect infrastructure as code (IaC) to ensure rapid disaster recovery and cost efficiency.",
+        "Transform messy server setups into automated, multi-region Kubernetes clusters with zero-downtime CI/CD pipelines. We architect infrastructure as code (IaC) to guarantee 99.999% reliability.",
       deliverables: [
-        "Kubernetes (EKS/GKE) orchestration and microservices",
-        "Terraform & Pulumi Infrastructure-as-Code automation",
-        "GitHub Actions & ArgoCD automated zero-downtime deployments",
+        "Kubernetes (EKS/GKE) cluster orchestration",
+        "Terraform & Pulumi Infrastructure-as-Code definitions",
+        "Zero-downtime GitHub Actions & ArgoCD GitOps pipelines",
         "AWS/GCP Cloud cost optimization & right-sizing",
         "24/7 Datadog & Prometheus telemetry, tracing & alerting",
       ],
@@ -63,10 +55,10 @@ export default function Services({ onOpenConsultation }) {
       icon: Cpu,
       subtitle: "Production-grade LLMs, RAG & domain-specific automation",
       description:
-        "Move beyond raw prompts. We engineer dependable, enterprise-secure AI pipelines utilizing retrieval-augmented generation (RAG), vector databases, and multi-agent reasoning systems that integrate with your proprietary data.",
+        "Move beyond raw prompts. We build secure, enterprise-grade AI pipelines utilizing retrieval-augmented generation (RAG), vector embeddings, and autonomous multi-agent reasoning systems.",
       deliverables: [
-        "Custom RAG architectures with Pinecone, Qdrant & pgvector",
-        "Multi-agent task orchestration frameworks (LangChain / LlamaIndex)",
+        "Custom RAG architectures with Pinecone & pgvector",
+        "Multi-agent reasoning frameworks (LangChain / LlamaIndex)",
         "Proprietary data ingestion, chunking & semantic search",
         "Private on-prem / VPC model deployment & token cost controls",
         "Automated evaluation suites & hallucination guards",
@@ -79,7 +71,7 @@ export default function Services({ onOpenConsultation }) {
       icon: Smartphone,
       subtitle: "Native-grade iOS & Android applications",
       description:
-        "Deliver delightful, silky-smooth mobile experiences that users love. Utilizing React Native and native iOS (Swift) / Android (Kotlin) modules, we ship cohesive cross-platform apps with shared logic and native performance.",
+        "Deliver delightful, silky-smooth mobile experiences. Utilizing React Native and native iOS (Swift) / Android (Kotlin) modules, we ship cohesive cross-platform applications with 60fps performance.",
       deliverables: [
         "Cross-platform iOS and Android mobile codebases",
         "Offline-first synchronization with SQLite and WatermelonDB",
@@ -91,39 +83,38 @@ export default function Services({ onOpenConsultation }) {
     },
     {
       id: "design",
-      title: "UI/UX & Comprehensive Design Systems",
+      title: "Design Systems & UI Engineering",
       icon: Palette,
       subtitle: "Human-centered product design & design tokens",
       description:
-        "Exceptional engineering deserves exceptional aesthetics. Our design squad crafts pixel-perfect user journeys, accessible components, and unified Figma design systems that bridge the gap between design and production code.",
+        "Exceptional engineering deserves exceptional aesthetics. Our design squad crafts accessible interfaces, unified component tokens, and frictionless user flows.",
       deliverables: [
-        "Interactive wireframes, user journeys & high-fidelity prototypes",
+        "Interactive wireframes & high-fidelity prototypes",
         "Reusable design systems with standardized token libraries",
         "WCAG 2.1 AA accessibility compliance audits",
-        "User testing, behavioral analytics & friction reduction",
-        "Zero-gap handoff to frontend engineering pods",
+        "User testing & behavioral analytics",
+        "Seamless handoff to frontend engineering pods",
       ],
-      stack: ["Figma", "Design Tokens", "TailwindCSS", "Storybook", "Framer"],
+      stack: ["Figma", "Design Tokens", "TailwindCSS", "Storybook"],
     },
     {
       id: "security",
-      title: "Cybersecurity & Infrastructure Audits",
+      title: "Cybersecurity & Hardened Audits",
       icon: ShieldCheck,
       subtitle: "Penetration testing, SOC2 preparation & hardening",
       description:
-        "Protect your enterprise reputation and client data. We perform comprehensive codebase vulnerability scans, cloud IAM least-privilege audits, and zero-trust perimeter hardening to prepare your systems for enterprise compliance.",
+        "Protect your enterprise reputation and client data. We perform comprehensive codebase vulnerability scans, cloud IAM least-privilege audits, and zero-trust perimeter hardening.",
       deliverables: [
         "Full-stack web and API penetration testing",
         "AWS/GCP IAM security posture review & credential rotation",
         "SOC2 Type II, HIPAA & GDPR readiness assessments",
         "Encrypted secrets management (HashiCorp Vault / AWS Secrets)",
-        "Third-party dependency & supply chain vulnerability audits",
+        "Supply chain & dependency vulnerability audits",
       ],
-      stack: ["Zero-Trust", "Vault", "SonarQube", "OWASP", "CloudTrail", "TLS 1.3"],
+      stack: ["Zero-Trust", "Vault", "OWASP", "CloudTrail", "TLS 1.3"],
     },
   ];
 
-  // Dynamic estimate calculator
   const calculateEstimate = () => {
     let baseWeeks = 6;
     let baseCost = 15;
@@ -155,392 +146,285 @@ export default function Services({ onOpenConsultation }) {
     return {
       weeks: `${baseWeeks} - ${baseWeeks + 3} Weeks`,
       budget: `$${baseCost}k - $${baseCost + 15}k`,
-      sprints: `${Math.ceil(baseWeeks / 2)} Two-Week Sprints`,
+      sprints: `${Math.ceil(baseWeeks / 2)} Sprints (14-day cycles)`,
     };
   };
 
   const estimate = calculateEstimate();
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* HEADER HERO */}
-      <section className="pt-16 pb-20 bg-slate-50/80 border-b border-slate-200/80 bg-grid-pattern relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 mb-6">
-            <Zap className="w-3.5 h-3.5 text-blue-600" />
-            <span>CodeCrafters LLC Engineering Suite</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-            Enterprise Digital Capabilities,{" "}
-            <span className="text-gradient-blue">Crafted with Precision</span>
+    <div className="bg-black text-[#f5f5f7]">
+      {/* 1. SERVICES HERO TILE (Pure Black) */}
+      <section className="pt-20 pb-24 sm:pt-24 sm:pb-32 text-center px-4 sm:px-6 bg-black">
+        <div className="max-w-[1024px] mx-auto">
+          <span className="text-[12px] font-semibold text-[#86868b] uppercase tracking-wider block mb-3">
+            CodeCrafters Capabilities
+          </span>
+          <h1 className="text-[38px] sm:text-[52px] lg:text-[60px] font-semibold text-white leading-[1.07] tracking-[-0.28px] max-w-3xl mx-auto mb-4">
+            Enterprise Digital Capabilities. Crafted with Precision.
           </h1>
-
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            From modern web platforms to multi-region cloud migrations and private AI pipelines, our Hillsborough, NJ engineering studio delivers robust, production-grade solutions.
+          <p className="text-[20px] sm:text-[24px] text-white/80 font-normal leading-[1.2] max-w-2xl mx-auto mb-8">
+            From modern web platforms to multi-region cloud migrations and enterprise AI agents.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenConsultation}
-              className="px-6 py-3 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-500/25 transition-all text-sm flex items-center space-x-2 cursor-pointer"
+              className="apple-btn-primary"
             >
-              <Sparkles className="w-4 h-4 text-blue-200" />
-              <span>Request Custom Proposal</span>
+              Request Custom Proposal
             </button>
             <a
               href="#estimator"
-              className="px-6 py-3 rounded-xl font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all text-sm flex items-center space-x-2"
+              className="apple-btn-secondary"
             >
-              <Calculator className="w-4 h-4 text-slate-400" />
-              <span>Interactive Scope Estimator</span>
+              Interactive Scope Estimator
             </a>
           </div>
         </div>
       </section>
 
-      {/* CORE CAPABILITIES BREAKDOWN */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-16">
-          {servicePillars.map((service, idx) => {
-            const Icon = service.icon;
-            const isReversed = idx % 2 === 1;
+      {/* 2. ALTERNATING FULL-BLEED SERVICE TILES IN BLACK & OBSIDIAN */}
+      <div>
+        {servicePillars.map((service, idx) => {
+          const Icon = service.icon;
+          const isDarker = idx % 2 === 1;
 
-            return (
-              <div
-                key={service.id}
-                id={service.id}
-                className={`p-8 sm:p-12 rounded-3xl border border-slate-200/90 bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] flex flex-col lg:flex-row gap-10 items-center ${
-                  isReversed ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Left Description */}
-                <div className="lg:w-1/2 space-y-5">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
-                    <Icon className="w-6 h-6" />
-                  </div>
-
+          return (
+            <section
+              key={service.id}
+              id={service.id}
+              className={`py-20 sm:py-28 px-4 sm:px-6 border-t border-[#1e1f24] ${
+                isDarker ? "bg-[#090a0c]" : "bg-black"
+              }`}
+            >
+              <div className="max-w-[1024px] mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  {/* Left Column */}
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-                      Engineering Pillar 0{idx + 1}
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                      {service.title}
-                    </h2>
-                    <p className="text-xs font-medium text-slate-500 mt-1">
-                      {service.subtitle}
-                    </p>
-                  </div>
-
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <div className="pt-2">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
-                      Production Deliverables Included:
-                    </h4>
-                    <ul className="space-y-2">
-                      {service.deliverables.map((item, dIndex) => (
-                        <li key={dIndex} className="flex items-start space-x-2.5 text-xs text-slate-600">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 flex items-center gap-4">
-                    <button
-                      onClick={onOpenConsultation}
-                      className="px-5 py-2.5 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-500 shadow-md shadow-blue-500/20 transition-all flex items-center space-x-1.5 cursor-pointer"
-                    >
-                      <span>Inquire About This Service</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Right Stack & Architecture Box */}
-                <div className="lg:w-1/2 w-full">
-                  <div className="rounded-2xl bg-slate-900 p-6 sm:p-8 text-white border border-slate-800 shadow-xl space-y-6">
-                    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                      <span className="text-xs font-mono text-blue-400 font-bold">
-                        // CORE TECHNOLOGY STACK
+                    <div className="flex items-center space-x-2 text-[12px] font-mono mb-3">
+                      <span className="text-[#2997ff]">
+                        PILLAR 0{idx + 1}
                       </span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
-                        PRODUCTION-PROVEN
+                      <span className="text-[#6e6e73]">•</span>
+                      <span className="text-[#a1a1a6]">
+                        {service.subtitle}
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <h2 className="text-[32px] sm:text-[40px] font-semibold text-white leading-[1.10] mb-4">
+                      {service.title}
+                    </h2>
+
+                    <p className="text-[17px] text-[#a1a1a6] leading-[1.47] mb-8">
+                      {service.description}
+                    </p>
+
+                    {/* Deliverables */}
+                    <div className="space-y-2 mb-8">
+                      <h4 className="text-[14px] font-semibold text-white mb-3">
+                        Production Deliverables:
+                      </h4>
+                      {service.deliverables.map((del, dIdx) => (
+                        <div key={dIdx} className="flex items-start space-x-2 text-[14px]">
+                          <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-[#2997ff]" />
+                          <span className="text-[#cccccc]">
+                            {del}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div>
+                      <button
+                        onClick={onOpenConsultation}
+                        className="apple-link text-[14px] cursor-pointer"
+                      >
+                        <span>Schedule discovery for this pillar</span>
+                        <ChevronRight className="w-4 h-4 ml-0.5" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Stack Card */}
+                  <div className="rounded-[18px] p-8 apple-product-shadow bg-[#121316] border border-[#26272b] text-white">
+                    <div className="flex items-center justify-between pb-4 border-b border-[#26272b] mb-6">
+                      <div className="flex items-center space-x-2.5">
+                        <Icon className="w-5 h-5 text-[#2997ff]" />
+                        <span className="text-[14px] font-semibold">Core Stack</span>
+                      </div>
+                      <span className="text-[11px] font-mono text-[#86868b]">
+                        PRODUCTION READY
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2.5 mb-6">
                       {service.stack.map((tech, tIdx) => (
                         <div
                           key={tIdx}
-                          className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center space-x-2 text-xs font-medium text-slate-200"
+                          className="p-3 rounded-[8px] text-[13px] font-medium flex items-center space-x-2 bg-[#18191d] border border-[#26272b] text-white"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2997ff]" />
                           <span>{tech}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 text-[11px] font-mono text-slate-400 leading-relaxed">
-                      <div className="text-emerald-400 mb-1">
-                        ✔ Zero technical debt guarantee
-                      </div>
-                      <div>
-                        Dedicated US-based senior engineering squad from Hillsborough, NJ with transparent daily PR reviews and 90%+ automated test suites.
-                      </div>
+                    <div className="p-4 rounded-[11px] text-[12px] leading-relaxed bg-black border border-[#26272b] text-[#a1a1a6]">
+                      <span className="font-semibold block mb-0.5 text-white">
+                        Direct Senior Architect Review
+                      </span>
+                      Managed by our Hillsborough, NJ studio with daily PR reviews, automated linting, and 100% intellectual property ownership upon completion.
                     </div>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </section>
+            </section>
+          );
+        })}
+      </div>
 
-      {/* INTERACTIVE ESTIMATOR SECTION */}
-      <section id="estimator" className="py-20 bg-slate-50 border-y border-slate-200/80">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-100/80 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
-              <Calculator className="w-3.5 h-3.5 text-blue-600" />
-              <span>Self-Serve Scope Estimator</span>
-            </div>
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Estimate Your Project Timeline &amp; Budget
+      {/* 3. INTERACTIVE PROJECT ESTIMATOR */}
+      <section id="estimator" className="bg-[#090a0c] py-20 sm:py-28 px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[840px] mx-auto">
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <span className="text-[12px] font-semibold text-[#86868b] uppercase tracking-wider block mb-2">
+              Scope Estimator
+            </span>
+            <h2 className="text-[32px] sm:text-[40px] font-semibold text-white leading-[1.10] mb-3">
+              Estimate Your Delivery Schedule.
             </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Select your specifications below to generate a transparent ballpark timeline and sprint allocation.
+            <p className="text-[17px] text-[#a1a1a6]">
+              Select your specifications below for a transparent, ballpark scope assessment.
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-xl">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Controls */}
-              <div className="lg:col-span-2 space-y-6">
-                {/* 1. Project Type */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
-                    1. Primary Technology Area
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      { id: "web", name: "Web Application" },
-                      { id: "cloud", name: "Cloud & DevOps" },
-                      { id: "ai", name: "Enterprise AI / RAG" },
-                      { id: "mobile", name: "Mobile iOS / Android" },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => setProjectType(item.id)}
-                        className={`p-3 rounded-xl text-left border text-xs font-medium transition-all ${
-                          projectType === item.id
-                            ? "bg-blue-50 border-blue-600 text-blue-700 font-bold shadow-sm"
-                            : "border-slate-200 text-slate-600 hover:border-slate-300"
-                        }`}
-                      >
-                        {item.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 2. Scale / Complexity */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
-                    2. Scope &amp; Complexity
-                  </label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      { id: "mvp", name: "MVP Prototyping", desc: "Fast launch" },
-                      { id: "growth", name: "Growth Scale", desc: "Production core" },
-                      { id: "enterprise", name: "Enterprise Suite", desc: "High scale" },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => setScale(item.id)}
-                        className={`p-3 rounded-xl text-left border text-xs transition-all ${
-                          scale === item.id
-                            ? "bg-blue-50 border-blue-600 text-blue-700 font-bold shadow-sm"
-                            : "border-slate-200 text-slate-600 hover:border-slate-300"
-                        }`}
-                      >
-                        <div className="font-bold">{item.name}</div>
-                        <div className="text-[10px] text-slate-400 font-normal">{item.desc}</div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 3. Timeline Urgency */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
-                    3. Delivery Speed
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      { id: "standard", name: "Standard Agile Cadence", desc: "Regular 2-week sprints" },
-                      { id: "rapid", name: "Fast-Track Acceleration", desc: "Dedicated squad sprint" },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => setTimeline(item.id)}
-                        className={`p-3 rounded-xl text-left border text-xs transition-all ${
-                          timeline === item.id
-                            ? "bg-blue-50 border-blue-600 text-blue-700 font-bold shadow-sm"
-                            : "border-slate-200 text-slate-600 hover:border-slate-300"
-                        }`}
-                      >
-                        <div className="font-bold">{item.name}</div>
-                        <div className="text-[10px] text-slate-400 font-normal">{item.desc}</div>
-                      </button>
-                    ))}
-                  </div>
+          <div className="bg-[#121316] rounded-[18px] border border-[#26272b] p-8 sm:p-10 apple-product-shadow">
+            <div className="space-y-8">
+              {/* 1. Technology Area */}
+              <div>
+                <label className="block text-[12px] font-semibold uppercase tracking-wider text-[#86868b] mb-3">
+                  1. Primary Technology Area
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                  {[
+                    { id: "web", name: "Web Platform" },
+                    { id: "cloud", name: "Cloud & DevOps" },
+                    { id: "ai", name: "Enterprise AI" },
+                    { id: "mobile", name: "Mobile App" },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setProjectType(item.id)}
+                      className={`p-3 rounded-full text-[13px] text-center transition-all cursor-pointer active:scale-95 ${
+                        projectType === item.id
+                          ? "bg-[#0066cc] text-white font-medium"
+                          : "bg-[#18191d] text-[#cccccc] border border-[#26272b] hover:border-[#383940]"
+                      }`}
+                    >
+                      {item.name}
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Estimate Summary Card */}
-              <div className="p-6 rounded-2xl bg-slate-900 text-white flex flex-col justify-between border border-slate-800 shadow-lg">
+              {/* 2. Complexity */}
+              <div>
+                <label className="block text-[12px] font-semibold uppercase tracking-wider text-[#86868b] mb-3">
+                  2. Scope &amp; Complexity
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  {[
+                    { id: "mvp", name: "MVP Prototype", desc: "Rapid 4-6 week sprint" },
+                    { id: "growth", name: "Growth Scale", desc: "Production core platform" },
+                    { id: "enterprise", name: "Enterprise Mesh", desc: "Multi-region cluster" },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setScale(item.id)}
+                      className={`p-3.5 rounded-[14px] text-left transition-all cursor-pointer active:scale-95 ${
+                        scale === item.id
+                          ? "border-2 border-[#2997ff] bg-[#18191d]"
+                          : "border border-[#26272b] bg-[#141518] hover:border-[#383940]"
+                      }`}
+                    >
+                      <div className="text-[14px] font-semibold text-white">{item.name}</div>
+                      <div className="text-[12px] text-[#86868b]">{item.desc}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 3. Timeline */}
+              <div>
+                <label className="block text-[12px] font-semibold uppercase tracking-wider text-[#86868b] mb-3">
+                  3. Delivery Urgency
+                </label>
+                <div className="grid grid-cols-2 gap-2.5">
+                  {[
+                    { id: "standard", name: "Standard Cadence", desc: "Normal sprint pace" },
+                    { id: "rapid", name: "Accelerated Sprint", desc: "Dedicated squad" },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setTimeline(item.id)}
+                      className={`p-3.5 rounded-[14px] text-left transition-all cursor-pointer active:scale-95 ${
+                        timeline === item.id
+                          ? "border-2 border-[#2997ff] bg-[#18191d]"
+                          : "border border-[#26272b] bg-[#141518] hover:border-[#383940]"
+                      }`}
+                    >
+                      <div className="text-[14px] font-semibold text-white">{item.name}</div>
+                      <div className="text-[12px] text-[#86868b]">{item.desc}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Result Summary Box */}
+              <div className="p-6 rounded-[14px] bg-black border border-[#26272b] text-white flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400 block mb-1">
-                    ESTIMATED PROJECTION
+                  <span className="text-[11px] font-mono text-[#2997ff] uppercase block">
+                    Estimated Timeline &amp; Budget
                   </span>
-                  <h3 className="text-xl font-bold">Estimated Parameters</h3>
-
-                  <div className="mt-6 space-y-4">
-                    <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                      <span className="text-[10px] uppercase text-slate-400 block font-mono">
-                        Target Timeline
-                      </span>
-                      <span className="text-lg font-bold text-white mt-0.5 block">
-                        {estimate.weeks}
-                      </span>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                      <span className="text-[10px] uppercase text-slate-400 block font-mono">
-                        Ballpark Range
-                      </span>
-                      <span className="text-xl font-extrabold text-blue-400 mt-0.5 block">
-                        {estimate.budget}
-                      </span>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                      <span className="text-[10px] uppercase text-slate-400 block font-mono">
-                        Sprint Breakdown
-                      </span>
-                      <span className="text-sm font-bold text-slate-200 mt-0.5 block">
-                        {estimate.sprints}
-                      </span>
-                    </div>
+                  <div className="text-[28px] font-semibold tracking-tight mt-1 text-white">
+                    {estimate.budget}
+                  </div>
+                  <div className="text-[13px] text-[#a1a1a6] mt-0.5">
+                    {estimate.weeks} • {estimate.sprints}
                   </div>
                 </div>
 
-                <div className="pt-6">
-                  <button
-                    onClick={onOpenConsultation}
-                    className="w-full py-3 px-4 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-lg shadow-blue-500/25 transition-all text-xs flex items-center justify-center space-x-2 cursor-pointer"
-                  >
-                    <span>Confirm Scope With Our Team</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <p className="text-[10px] text-slate-400 text-center mt-2">
-                    Non-binding preliminary estimate • Free NDA provided
-                  </p>
-                </div>
+                <button
+                  onClick={onOpenConsultation}
+                  className="apple-btn-primary shrink-0 !py-[10px] !px-[20px] !text-[14px]"
+                >
+                  Book Discovery Call
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ENGAGEMENT MODELS */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-2">
-            Flexible Collaboration
-          </span>
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-            How We Partner With Your Organization
+      {/* 4. FOOTER INVITATION TILE */}
+      <section className="bg-black py-20 text-center px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[640px] mx-auto">
+          <h2 className="text-[28px] sm:text-[34px] font-semibold text-white mb-3">
+            Ready to Scope Your System?
           </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-4">
-                <Users className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Dedicated Engineering Squad</h3>
-              <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                A cross-functional pod (Lead Architect, Senior Full-Stack Engineers, QA Engineer) dedicated 100% to executing your backlog.
-              </p>
-            </div>
-            <ul className="space-y-2 text-xs text-slate-600 pt-4 border-t border-slate-100">
-              <li className="flex items-center space-x-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Full integration with your Slack &amp; Jira</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Predictable monthly billing</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-8 rounded-2xl border-2 border-blue-600 bg-blue-50/20 shadow-md flex flex-col justify-between relative">
-            <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider">
-              Most Popular
-            </span>
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold mb-4">
-                <Zap className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Fixed-Scope Product Delivery</h3>
-              <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                Guaranteed delivery of an agreed-upon roadmap, milestone by milestone. Perfect for MVPs, major re-architectures, or greenfield systems.
-              </p>
-            </div>
-            <ul className="space-y-2 text-xs text-slate-600 pt-4 border-t border-blue-100">
-              <li className="flex items-center space-x-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Fixed budget and locked timeline</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Milestone-based signoff</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-4">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Advisory &amp; Cloud Architecture Audit</h3>
-              <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                Deep-dive diagnostic into your existing architecture, database queries, security posture, and cloud bills with an actionable remediation playbook.
-              </p>
-            </div>
-            <ul className="space-y-2 text-xs text-slate-600 pt-4 border-t border-slate-100">
-              <li className="flex items-center space-x-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>2-week intensive assessment</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Full architecture blueprint report</span>
-              </li>
-            </ul>
-          </div>
+          <p className="text-[17px] text-[#a1a1a6] mb-6">
+            Our Hillsborough, NJ engineering squad is ready to review your architecture.
+          </p>
+          <button
+            onClick={onOpenConsultation}
+            className="apple-btn-primary"
+          >
+            Start Your Consultation
+          </button>
         </div>
       </section>
     </div>

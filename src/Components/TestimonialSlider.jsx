@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Star, Quote, Building2, ShieldCheck } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const TestimonialSlider = () => {
   const testimonials = [
@@ -10,9 +10,7 @@ const TestimonialSlider = () => {
       title: "Chief Technology Officer",
       company: "AuraPay Financial",
       location: "New York, NY",
-      rating: 5,
       metrics: "96% latency reduction • 10M+ daily events",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80",
     },
     {
       quote:
@@ -21,9 +19,7 @@ const TestimonialSlider = () => {
       title: "VP of Product Engineering",
       company: "Vitalis Health Systems",
       location: "Boston, MA",
-      rating: 5,
       metrics: "HIPAA Compliant • 3 Weeks Ahead of Schedule",
-      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=250&q=80",
     },
     {
       quote:
@@ -32,9 +28,7 @@ const TestimonialSlider = () => {
       title: "Head of Cloud Infrastructure",
       company: "OmniScale Logistics",
       location: "Austin, TX",
-      rating: 5,
       metrics: "38% AWS spend cut • 99.999% SLA achieved",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=250&q=80",
     },
   ];
 
@@ -51,97 +45,55 @@ const TestimonialSlider = () => {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-24 bg-white border-b border-slate-100 relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-50/70 rounded-full blur-3xl -z-10 pointer-events-none" />
+    <section className="bg-black py-20 sm:py-28 px-4 sm:px-6 border-t border-[#1e1f24]">
+      <div className="max-w-[1024px] mx-auto text-center">
+        <span className="text-[12px] font-semibold uppercase tracking-wider text-[#86868b] block mb-2">
+          Client Endorsements
+        </span>
+        <h2 className="text-[32px] sm:text-[40px] font-semibold text-white leading-[1.10] mb-12">
+          Built on Trust. Proven in Production.
+        </h2>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4">
-            <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-            <span>Proven Engineering Track Record</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Trusted by Technology Leaders &amp; Founders
-          </h2>
-          <p className="mt-3 text-base text-slate-600">
-            Hear directly from the engineering executives whose mission-critical platforms we architected.
-          </p>
-        </div>
-
-        {/* Testimonial Card */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-300">
-            <Quote className="absolute top-8 right-8 w-12 h-12 text-slate-100 -z-0" />
-
-            {/* Stars */}
-            <div className="flex items-center space-x-1 mb-6">
-              {[...Array(current.rating)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-              ))}
-              <span className="ml-2 text-xs font-bold text-slate-500">5.0 Verified Review</span>
-            </div>
-
-            {/* Quote */}
-            <p className="text-lg sm:text-xl font-medium text-slate-800 leading-relaxed italic relative z-10">
-              "{current.quote}"
-            </p>
-
-            {/* Impact Metric Pill */}
-            <div className="mt-6 inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200/70 text-emerald-700 text-xs font-bold">
-              ⚡ Impact: {current.metrics}
-            </div>
-
-            {/* Author Footer */}
-            <div className="mt-8 pt-8 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center space-x-4">
-                <img
-                  src={current.avatar}
-                  alt={current.author}
-                  className="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-md"
-                />
-                <div>
-                  <h4 className="text-base font-bold text-slate-900">{current.author}</h4>
-                  <p className="text-xs text-slate-500 font-medium">
-                    {current.title} • <span className="text-blue-600 font-semibold">{current.company}</span>
-                  </p>
-                  <p className="text-[11px] text-slate-400">{current.location}</p>
-                </div>
-              </div>
-
-              {/* Navigation Arrows */}
-              <div className="flex items-center space-x-2 self-end sm:self-center">
-                <button
-                  onClick={prev}
-                  aria-label="Previous Testimonial"
-                  className="w-10 h-10 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={next}
-                  aria-label="Next Testimonial"
-                  className="w-10 h-10 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
+        {/* Apple Style Dark Editorial Quote Card */}
+        <div className="max-w-[840px] mx-auto bg-[#121316] border border-[#26272b] rounded-[18px] p-8 sm:p-14 relative text-left apple-product-shadow">
+          <div className="mb-6">
+            <Quote className="w-8 h-8 text-[#2997ff]" />
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8">
-            {testimonials.map((_, idx) => (
+          <blockquote className="text-[20px] sm:text-[24px] font-normal text-white leading-[1.5] tracking-[-0.2px] mb-8">
+            "{current.quote}"
+          </blockquote>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-[#26272b]">
+            <div>
+              <div className="text-[17px] font-semibold text-white">
+                {current.author}
+              </div>
+              <div className="text-[14px] text-[#86868b]">
+                {current.title} • {current.company} ({current.location})
+              </div>
+            </div>
+
+            {/* Apple button-icon-circular Navigation (44x44px) */}
+            <div className="flex items-center space-x-3 self-end sm:self-auto">
               <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === idx ? "w-8 bg-blue-600" : "w-2 bg-slate-200 hover:bg-slate-300"
-                }`}
-              />
-            ))}
+                onClick={prev}
+                className="w-11 h-11 rounded-full bg-[#1c1d22] hover:bg-[#282930] active:scale-95 transition-transform flex items-center justify-center text-white cursor-pointer border border-white/5"
+                aria-label="Previous endorsement"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <span className="text-[12px] text-[#86868b] font-mono">
+                {currentIndex + 1} / {testimonials.length}
+              </span>
+              <button
+                onClick={next}
+                className="w-11 h-11 rounded-full bg-[#1c1d22] hover:bg-[#282930] active:scale-95 transition-transform flex items-center justify-center text-white cursor-pointer border border-white/5"
+                aria-label="Next endorsement"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

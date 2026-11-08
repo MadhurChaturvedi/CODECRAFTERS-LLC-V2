@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
-  BookOpen, 
   Search, 
-  Clock, 
-  ArrowRight, 
-  CheckCircle2, 
-  Sparkles, 
-  Tag, 
-  Calendar 
+  ChevronRight, 
+  CheckCircle2 
 } from "lucide-react";
 
 function News({ onOpenConsultation }) {
@@ -34,7 +29,6 @@ function News({ onOpenConsultation }) {
     author: {
       name: "Alexandre Sterling",
       role: "Lead Systems Architect",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
     },
     excerpt:
       "When building high-concurrency clearing ledgers, single-region failures cannot result in split-brain data corruption. Here is how our Hillsborough engineering squad designed active-active Kafka clusters with sub-15ms cross-region consensus.",
@@ -98,69 +92,64 @@ function News({ onOpenConsultation }) {
       categoryLabel: "Performance & Latency",
       readTime: "8 min read",
       date: "Jun 24, 2026",
-      excerpt: "Benchmarking SIMD-accelerated deserializers to eliminate memory garbage collection pauses during sudden 50,000 req/sec traffic spikes.",
+      excerpt: "Benchmarking standard library encoding/json against custom streaming buffer pools for microsecond-sensitive telemetry ingestion.",
       image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=600&q=80",
       author: "Alexandre Sterling",
     },
   ];
 
+  const filteredArticles = articles.filter((art) => {
+    const matchesCat = activeCategory === "all" || art.category === activeCategory;
+    const matchesQuery =
+      searchQuery === "" ||
+      art.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      art.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCat && matchesQuery;
+  });
+
   const handleNewsletter = (e) => {
     e.preventDefault();
     if (!newsletterEmail) return;
     setNewsletterSubscribed(true);
-    setTimeout(() => {
-      setNewsletterEmail("");
-    }, 2500);
   };
 
-  const filteredArticles = articles.filter((art) => {
-    const matchesCategory = activeCategory === "all" || art.category === activeCategory;
-    const matchesSearch =
-      art.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      art.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
   return (
-    <div className="bg-white min-h-screen">
-      {/* HERO / SEARCH HEADER */}
-      <section className="pt-16 pb-20 bg-slate-50/70 border-b border-slate-200/80 bg-grid-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 mb-6">
-            <BookOpen className="w-3.5 h-3.5 text-blue-600" />
-            <span>CodeCrafters LLC Engineering Dispatch</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-            Engineering Insights &amp; <span className="text-gradient-blue">Architecture Dispatch</span>
+    <div className="bg-black text-[#f5f5f7]">
+      {/* 1. NEWSROOM HERO TILE (Pure Black) */}
+      <section className="pt-20 pb-24 sm:pt-24 sm:pb-32 text-center px-4 sm:px-6 bg-black">
+        <div className="max-w-[1024px] mx-auto">
+          <span className="text-[12px] font-semibold text-[#86868b] uppercase tracking-wider block mb-3">
+            CodeCrafters Newsroom &amp; Technical Insights
+          </span>
+          <h1 className="text-[38px] sm:text-[52px] lg:text-[60px] font-semibold text-white leading-[1.07] tracking-[-0.28px] max-w-3xl mx-auto mb-4">
+            Architecture, Benchmarks &amp; Engineering Field Notes.
           </h1>
-
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            Technical deep dives, post-mortems, cloud cost optimization tactics, and enterprise AI blueprints straight from our Hillsborough, NJ engineering lab.
+          <p className="text-[20px] sm:text-[24px] text-white/80 font-normal leading-[1.2] max-w-2xl mx-auto mb-10">
+            Real lessons from deploying mission-critical systems in production.
           </p>
 
-          {/* Search Input */}
-          <div className="max-w-xl mx-auto relative mb-8">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+          {/* Search Pill Input */}
+          <div className="max-w-md mx-auto relative mb-8">
+            <Search className="w-4 h-4 text-[#86868b] absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search by topic, keyword, or technology..."
+              placeholder="Search architecture articles, benchmarks, and guides..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+              className="w-full pl-11 pr-4 py-2.5 h-[44px] rounded-full bg-[#18191d] border border-[#26272b] text-[15px] text-white focus:outline-none focus:ring-2 focus:ring-[#0071e3] placeholder-[#66676f]"
             />
           </div>
 
-          {/* Category Filter Pills */}
+          {/* Category Option Chips */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                className={`px-4 py-1.5 rounded-full text-[13px] transition-all cursor-pointer active:scale-95 ${
                   activeCategory === cat.id
-                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
-                    : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
+                    ? "bg-[#2997ff] text-black font-semibold"
+                    : "bg-[#141518] text-[#cccccc] border border-[#26272b] hover:border-[#383940]"
                 }`}
               >
                 {cat.label}
@@ -170,159 +159,133 @@ function News({ onOpenConsultation }) {
         </div>
       </section>
 
-      {/* FEATURED STORY */}
-      {activeCategory === "all" && !searchQuery && (
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row gap-8 items-center">
-            <div className="lg:w-1/2 space-y-5 relative z-10">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Featured Technical Deep Dive</span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight hover:text-blue-400 transition-colors">
-                {featuredArticle.title}
-              </h2>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                {featuredArticle.excerpt}
-              </p>
-
-              <div className="pt-2 flex items-center space-x-4">
-                <img
-                  src={featuredArticle.author.avatar}
-                  alt={featuredArticle.author.name}
-                  className="w-10 h-10 rounded-full object-cover border border-slate-700"
-                />
-                <div>
-                  <h4 className="text-xs font-bold text-white">{featuredArticle.author.name}</h4>
-                  <p className="text-[10px] text-slate-400">
-                    {featuredArticle.author.role} • {featuredArticle.readTime}
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  onClick={onOpenConsultation}
-                  className="inline-flex items-center px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-blue-600 hover:bg-blue-500 transition-all space-x-1.5 cursor-pointer"
-                >
-                  <span>Discuss Your System Architecture</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 w-full aspect-video rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+      {/* 2. FEATURED ARTICLE (Deep Obsidian) */}
+      <section className="bg-[#090a0c] py-20 px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[1024px] mx-auto">
+          <div className="rounded-[18px] bg-[#121316] border border-[#26272b] overflow-hidden apple-product-shadow grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-7 h-64 sm:h-96 lg:h-auto overflow-hidden">
               <img
                 src={featuredArticle.image}
-                alt="System Architecture"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt={featuredArticle.title}
+                className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
+            <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center space-x-2 text-[12px] text-[#86868b] mb-3">
+                  <span className="text-[#2997ff] font-semibold">
+                    {featuredArticle.categoryLabel}
+                  </span>
+                  <span>•</span>
+                  <span>{featuredArticle.readTime}</span>
+                </div>
+
+                <h2 className="text-[22px] sm:text-[26px] font-semibold text-white leading-snug mb-3">
+                  {featuredArticle.title}
+                </h2>
+
+                <p className="text-[14px] text-[#a1a1a6] leading-relaxed mb-6">
+                  {featuredArticle.excerpt}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#26272b] flex items-center justify-between">
+                <span className="text-[12px] text-[#86868b]">
+                  By {featuredArticle.author.name} • {featuredArticle.date}
+                </span>
+                <span className="apple-link text-[14px]">
+                  Read full note <ChevronRight className="w-4 h-4 ml-0.5" />
+                </span>
+              </div>
+            </div>
           </div>
-        </section>
-      )}
-
-      {/* ARTICLES GRID */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-8">
-          <h3 className="text-xl font-bold text-slate-900">
-            Latest Engineering Articles ({filteredArticles.length})
-          </h3>
         </div>
+      </section>
 
-        {filteredArticles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map((article, idx) => (
-              <article
+      {/* 3. ARTICLES DIRECTORY */}
+      <section className="bg-black py-20 sm:py-28 px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[1024px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredArticles.map((art, idx) => (
+              <div
                 key={idx}
-                className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                className="apple-utility-card flex flex-col justify-between"
               >
                 <div>
-                  <div className="aspect-video w-full overflow-hidden">
+                  <div className="aspect-[16/10] rounded-[11px] overflow-hidden mb-4 bg-[#1e1f24]">
                     <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      src={art.image}
+                      alt={art.title}
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3 text-xs text-slate-400">
-                      <span className="font-bold text-blue-600 uppercase tracking-wider text-[11px]">
-                        {article.categoryLabel}
-                      </span>
-                      <div className="flex items-center space-x-1">
-                        <Clock className="w-3.5 h-3.5" />
-                        <span>{article.readTime}</span>
-                      </div>
-                    </div>
-
-                    <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
-                      {article.title}
-                    </h4>
-
-                    <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                      {article.excerpt}
-                    </p>
+                  <div className="flex items-center space-x-2 text-[11px] text-[#86868b] mb-2">
+                    <span className="text-[#2997ff] font-medium">{art.categoryLabel}</span>
+                    <span>•</span>
+                    <span>{art.readTime}</span>
                   </div>
+
+                  <h3 className="text-[17px] font-semibold text-white leading-snug mb-2">
+                    {art.title}
+                  </h3>
+
+                  <p className="text-[13px] text-[#a1a1a6] leading-relaxed mb-5">
+                    {art.excerpt}
+                  </p>
                 </div>
 
-                <div className="px-6 pb-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 pt-4">
-                  <span className="font-medium text-slate-700">{article.author}</span>
-                  <span className="text-slate-400">{article.date}</span>
+                <div className="pt-3 border-t border-[#26272b] flex items-center justify-between text-[12px] text-[#86868b]">
+                  <span>{art.author}</span>
+                  <span className="apple-link text-[13px]">
+                    Read <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
+                  </span>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
-        ) : (
-          <div className="py-16 text-center">
-            <p className="text-slate-500 text-sm">
-              No technical articles found matching "{searchQuery}".
-            </p>
-          </div>
-        )}
+
+          {filteredArticles.length === 0 && (
+            <div className="py-16 text-center text-[#86868b]">
+              No articles match your search query. Try another keyword.
+            </div>
+          )}
+        </div>
       </section>
 
-      {/* NEWSLETTER SUBSCRIPTION */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="p-10 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-6">
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider">
-              No Spam • Strictly Engineering
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Get Our Monthly Architecture Dispatch
-            </h3>
-            <p className="text-sm text-slate-600 max-w-lg mx-auto">
-              We send one curated email per month breaking down production incident post-mortems, distributed systems benchmarks, and new AI tools.
-            </p>
+      {/* 4. NEWSLETTER SUBSCRIPTION */}
+      <section className="bg-[#090a0c] py-20 px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[640px] mx-auto text-center">
+          <h3 className="text-[28px] font-semibold text-white mb-2">
+            Subscribe to Engineering Field Notes
+          </h3>
+          <p className="text-[14px] text-[#a1a1a6] mb-6">
+            Delivered monthly from our Hillsborough studio. No marketing fluff—just pure architecture breakdowns and system benchmarks.
+          </p>
 
-            <form onSubmit={handleNewsletter} className="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+          {!newsletterSubscribed ? (
+            <form onSubmit={handleNewsletter} className="flex flex-col sm:flex-row gap-3 justify-center">
               <input
                 type="email"
                 required
-                placeholder="developer@company.com"
+                placeholder="colleague@enterprise.com"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="flex-1 px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"
+                className="px-4 py-2.5 h-[44px] rounded-full bg-[#18191d] border border-[#26272b] text-[14px] text-white focus:outline-none focus:ring-2 focus:ring-[#0071e3] min-w-[280px] placeholder-[#66676f]"
               />
               <button
                 type="submit"
-                className="px-6 py-3 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 transition-all text-xs shrink-0 cursor-pointer"
+                className="apple-btn-primary !h-[44px]"
               >
-                Join 8,400+ Engineers
+                Subscribe
               </button>
             </form>
-
-            {newsletterSubscribed && (
-              <div className="flex items-center justify-center space-x-2 text-xs text-emerald-600 font-semibold pt-2">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>You're subscribed! Welcome to the CodeCrafters dispatch.</span>
-              </div>
-            )}
-          </div>
+          ) : (
+            <div className="flex items-center justify-center space-x-2 text-[14px] text-[#27c93f] font-medium">
+              <CheckCircle2 className="w-5 h-5" />
+              <span>You are subscribed to CodeCrafters Engineering Notes.</span>
+            </div>
+          )}
         </div>
       </section>
     </div>

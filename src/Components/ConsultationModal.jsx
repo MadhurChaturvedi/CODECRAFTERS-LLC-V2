@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { X, CheckCircle2, Sparkles, Send, ArrowRight, ShieldCheck } from "lucide-react";
+import { X, CheckCircle2, ShieldCheck } from "lucide-react";
 
 export default function ConsultationModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
-    service: "Custom Web Application",
-    budget: "$15k - $50k",
+    service: "Custom Web Platform",
+    budget: "$25k - $50k",
     name: "",
     email: "",
     company: "",
@@ -16,15 +16,15 @@ export default function ConsultationModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const services = [
-    "Custom Web Application",
-    "Cloud Architecture & DevOps",
-    "AI Agents & Automation",
-    "Mobile & Cross-Platform",
+    "Custom Web Platform",
+    "Cloud & DevOps Architecture",
+    "Enterprise AI & Agents",
+    "Mobile Applications",
     "Security & Infrastructure Audit",
-    "UI/UX Product Design",
+    "Design Systems & UI",
   ];
 
-  const budgets = ["<$10k", "$10k - $25k", "$25k - $50k", "$50k - $100k", "$100k+"];
+  const budgets = ["<$15k", "$15k - $25k", "$25k - $50k", "$50k - $100k", "$100k+"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,37 +41,37 @@ export default function ConsultationModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div 
-        className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
+        className="relative w-full max-w-lg bg-[#121316] text-white rounded-[18px] border border-[#26272b] apple-product-shadow overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 bg-slate-50/70">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-blue-600/10 text-blue-600 flex items-center justify-center font-bold">
-              <Sparkles className="w-4 h-4 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">Initiate Project Consultation</h3>
-              <p className="text-xs text-slate-500">CodeCrafters LLC • Hillsborough, NJ</p>
-            </div>
+        {/* Apple Modal Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#26272b] bg-[#0c0d10]">
+          <div>
+            <h3 className="text-[17px] font-semibold text-white tracking-tight">
+              Schedule Architectural Discovery
+            </h3>
+            <p className="text-[12px] text-[#86868b]">
+              CodeCrafters LLC • Hillsborough, NJ Studio
+            </p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 rounded-full transition-colors"
+            className="w-8 h-8 rounded-full bg-[#1e1f24] hover:bg-[#282930] active:scale-95 transition-transform flex items-center justify-center text-white cursor-pointer"
+            aria-label="Close dialog"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Content */}
+        {/* Modal Body */}
         <div className="p-6">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  1. Select Area of Focus
+                <label className="block text-[12px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">
+                  1. Focus Area
                 </label>
                 <div className="grid grid-cols-2 gap-2">
                   {services.map((s) => (
@@ -79,10 +79,10 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       key={s}
                       type="button"
                       onClick={() => setFormData({ ...formData, service: s })}
-                      className={`text-left text-xs font-medium px-3 py-2.5 rounded-lg border transition-all ${
+                      className={`text-left text-[12px] px-3 py-2 rounded-[8px] border transition-all active:scale-95 cursor-pointer ${
                         formData.service === s
-                          ? "bg-blue-50 border-blue-500 text-blue-700 font-semibold shadow-sm"
-                          : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
+                          ? "bg-[#0066cc] text-white border-[#0066cc] font-medium"
+                          : "border-[#26272b] bg-[#18191d] text-[#cccccc] hover:border-[#383940]"
                       }`}
                     >
                       {s}
@@ -92,19 +92,19 @@ export default function ConsultationModal({ isOpen, onClose }) {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  2. Anticipated Budget Scope
+                <label className="block text-[12px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">
+                  2. Project Scope &amp; Budget
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {budgets.map((b) => (
                     <button
                       key={b}
                       type="button"
                       onClick={() => setFormData({ ...formData, budget: b })}
-                      className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                      className={`text-[12px] px-3 py-1.5 rounded-full border transition-all active:scale-95 cursor-pointer ${
                         formData.budget === b
-                          ? "bg-blue-600 border-blue-600 text-white font-semibold"
-                          : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          ? "bg-[#2997ff] text-black font-semibold border-[#2997ff]"
+                          : "border-[#26272b] bg-[#18191d] text-[#cccccc] hover:border-[#383940]"
                       }`}
                     >
                       {b}
@@ -113,89 +113,80 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Your Name *</label>
+                  <label className="block text-[12px] font-medium text-[#86868b] mb-1">
+                    Your Name
+                  </label>
                   <input
                     type="text"
                     required
-                    placeholder="Jane Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full text-sm px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"
+                    placeholder="Jane Doe"
+                    className="w-full px-3.5 py-2 text-[14px] bg-[#18191d] border border-[#26272b] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#0071e3] text-white placeholder-[#55565d]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Work Email *</label>
+                  <label className="block text-[12px] font-medium text-[#86868b] mb-1">
+                    Work Email
+                  </label>
                   <input
                     type="email"
                     required
-                    placeholder="jane@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full text-sm px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"
+                    placeholder="jane@company.com"
+                    className="w-full px-3.5 py-2 text-[14px] bg-[#18191d] border border-[#26272b] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#0071e3] text-white placeholder-[#55565d]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">Company / Organization</label>
-                <input
-                  type="text"
-                  placeholder="Acme Corp"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="w-full text-sm px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">Brief Overview / Goals</label>
+                <label className="block text-[12px] font-medium text-[#86868b] mb-1">
+                  Technical Goals / Brief Overview
+                </label>
                 <textarea
-                  rows="3"
-                  placeholder="Tell us about the product or infrastructure challenge you are tackling..."
+                  rows={3}
                   value={formData.details}
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                  className="w-full text-sm px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"
+                  placeholder="Outline your tech stack, timeline, or current architectural bottlenecks..."
+                  className="w-full px-3.5 py-2 text-[14px] bg-[#18191d] border border-[#26272b] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#0071e3] text-white placeholder-[#55565d]"
                 />
               </div>
 
-              <div className="flex items-center justify-between pt-2">
-                <div className="flex items-center text-[11px] text-slate-500 space-x-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>Strict NDA • Same-day Response</span>
-                </div>
+              <div className="pt-2">
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 active:scale-95 rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-200 cursor-pointer"
+                  className="apple-btn-primary w-full !text-[15px] !py-[10px]"
                 >
-                  {submitting ? (
-                    <span>Submitting...</span>
-                  ) : (
-                    <>
-                      <span>Send Consultation Request</span>
-                      <ArrowRight className="w-4 h-4 ml-1.5" />
-                    </>
-                  )}
+                  {submitting ? "Processing..." : "Schedule Architectural Discovery"}
                 </button>
+              </div>
+
+              <div className="flex items-center justify-center space-x-1.5 text-[11px] text-[#86868b]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#2997ff]" />
+                <span>Strict 100% mutual NDA enforced. Direct senior architect review.</span>
               </div>
             </form>
           ) : (
             <div className="py-8 text-center space-y-4">
-              <div className="w-16 h-16 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                <CheckCircle2 className="w-10 h-10" />
+              <div className="w-12 h-12 rounded-full bg-[#18191d] border border-[#26272b] flex items-center justify-center mx-auto text-[#2997ff]">
+                <CheckCircle2 className="w-6 h-6" />
               </div>
-              <h4 className="text-xl font-bold text-slate-900">Inquiry Received!</h4>
-              <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. An engineering partner at CodeCrafters LLC will review your {formData.service} project requirements and follow up within 4 business hours.
+              <h4 className="text-[20px] font-semibold text-white">
+                Discovery Request Received
+              </h4>
+              <p className="text-[14px] text-[#a1a1a6] max-w-sm mx-auto leading-relaxed">
+                Thank you, {formData.name}. A lead architect from our Hillsborough, NJ studio will review your project parameters and respond within 24 hours.
               </p>
               <div className="pt-2">
                 <button
                   onClick={handleReset}
-                  className="px-6 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all cursor-pointer"
+                  className="apple-btn-secondary !text-[14px] !py-[8px] !px-[20px]"
                 >
-                  Close &amp; Return to Site
+                  Close Window
                 </button>
               </div>
             </div>

@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Users, 
-  Sparkles, 
-  ArrowRight, 
-  Briefcase, 
-  MapPin, 
-  CheckCircle2, 
-  ExternalLink 
-} from "lucide-react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { ChevronRight } from "lucide-react";
 
 export default function Team({ onOpenConsultation }) {
   const [filter, setFilter] = useState("all");
@@ -57,7 +48,7 @@ export default function Team({ onOpenConsultation }) {
     },
     {
       name: "Priya Patel",
-      role: "Staff Cybersecurity & Compliance Specialist",
+      role: "Staff Cybersecurity Specialist",
       department: "cloud",
       bio: "Certified information systems auditor (CISA). Directs SOC2 Type II compliance, cloud IAM security audits, and zero-trust implementations.",
       skills: ["SOC2 Auditing", "Penetration Testing", "HashiCorp Vault", "IAM"],
@@ -75,7 +66,7 @@ export default function Team({ onOpenConsultation }) {
       name: "Sarah Jenkins",
       role: "Senior Enterprise AI Engineer",
       department: "ai",
-      bio: "Focuses on autonomous multi-agent task workflows, structured function calling, and token-cost optimization for Fortune 500 workflows.",
+      bio: "Focuses on autonomous multi-agent task workflows, structured function calling, and token-cost optimization for enterprise workflows.",
       skills: ["LangChain", "LlamaIndex", "FastAPI", "Semantic Caching"],
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
     },
@@ -98,7 +89,7 @@ export default function Team({ onOpenConsultation }) {
       title: "Senior Enterprise AI / ML Engineer",
       type: "Full-Time • Hillsborough, NJ or Remote (US)",
       salary: "$165k - $215k + Equity",
-      skills: ["Python", "RAG Pipelines", "Vector DBs", "LangChain"],
+      skills: ["Python", "PyTorch", "LangChain", "Vector DBs"],
     },
   ];
 
@@ -108,146 +99,140 @@ export default function Team({ onOpenConsultation }) {
       : teamMembers.filter((m) => m.department === filter);
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* HEADER */}
-      <section className="pt-16 pb-20 bg-slate-50/70 border-b border-slate-200/80 bg-grid-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 mb-6">
-            <Users className="w-3.5 h-3.5 text-blue-600" />
-            <span>CodeCrafters LLC Engineering Talent</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-            The Minds Behind <span className="text-gradient-blue">The Systems</span>
+    <div className="bg-black text-[#f5f5f7]">
+      {/* 1. HERO TILE (Pure Black) */}
+      <section className="pt-20 pb-24 sm:pt-24 sm:pb-32 text-center px-4 sm:px-6 bg-black">
+        <div className="max-w-[1024px] mx-auto">
+          <span className="text-[12px] font-semibold text-[#86868b] uppercase tracking-wider block mb-3">
+            Engineering Pod Leadership
+          </span>
+          <h1 className="text-[38px] sm:text-[52px] lg:text-[60px] font-semibold text-white leading-[1.07] tracking-[-0.28px] max-w-3xl mx-auto mb-4">
+            Master Craftspeople. Senior Engineers on Every Build.
           </h1>
-
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            Meet our multidisciplinary squad of senior software architects, cloud engineers, AI researchers, and UX craftsmen based in Hillsborough, NJ and across North America.
+          <p className="text-[20px] sm:text-[24px] text-white/80 font-normal leading-[1.2] max-w-2xl mx-auto mb-8">
+            Our squad consists exclusively of senior software architects, distributed systems veterans, and machine learning researchers.
           </p>
 
-          {/* Department Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={onOpenConsultation}
+              className="apple-btn-primary"
+            >
+              Collaborate With Our Squad
+            </button>
+            <a
+              href="#careers"
+              className="apple-btn-secondary"
+            >
+              Explore Open Roles
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. TEAM DIRECTORY (Deep Obsidian) */}
+      <section className="bg-[#090a0c] py-20 sm:py-28 px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[1024px] mx-auto">
+          {/* Department Filter Chips */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
             {[
-              { id: "all", label: "All Specialists" },
-              { id: "executive", label: "Leadership" },
+              { id: "all", label: "All Squad Members" },
+              { id: "executive", label: "Executive & Architecture" },
+              { id: "engineering", label: "Full-Stack & Systems" },
               { id: "cloud", label: "Cloud & DevOps" },
-              { id: "ai", label: "AI & Data" },
-              { id: "engineering", label: "Full-Stack" },
-              { id: "design", label: "Design & UX" },
+              { id: "ai", label: "Enterprise AI" },
+              { id: "design", label: "Design Systems" },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                className={`px-4 py-2 text-[13px] rounded-full transition-all active:scale-95 cursor-pointer ${
                   filter === tab.id
-                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
-                    : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
+                    ? "bg-[#2997ff] text-black font-semibold"
+                    : "bg-[#141518] text-[#cccccc] border border-[#26272b] hover:border-[#383940]"
                 }`}
               >
                 {tab.label}
               </button>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* TEAM DIRECTORY GRID */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {filteredMembers.map((member, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 p-6 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="relative mb-5 overflow-hidden rounded-xl aspect-square">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 justify-end gap-2">
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1.5 rounded-lg bg-white/90 text-slate-800 hover:text-blue-600 transition-colors shadow-sm"
-                    >
-                      <FaLinkedinIn className="w-4 h-4" />
-                    </a>
-                    <a
-                      href="https://github.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1.5 rounded-lg bg-white/90 text-slate-800 hover:text-blue-600 transition-colors shadow-sm"
-                    >
-                      <FaGithub className="w-4 h-4" />
-                    </a>
+          {/* Members Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredMembers.map((member, idx) => (
+              <div
+                key={idx}
+                className="apple-utility-card flex flex-col justify-between"
+              >
+                <div>
+                  <div className="aspect-square rounded-[11px] overflow-hidden mb-4 bg-[#1e1f24]">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                    />
                   </div>
+
+                  <h3 className="text-[17px] font-semibold text-white leading-snug">
+                    {member.name}
+                  </h3>
+                  <p className="text-[12px] text-[#2997ff] font-medium mb-3">
+                    {member.role}
+                  </p>
+                  <p className="text-[13px] text-[#a1a1a6] leading-[1.43] mb-4">
+                    {member.bio}
+                  </p>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-xs font-semibold text-blue-600 mb-3">
-                  {member.role}
-                </p>
-
-                <p className="text-xs text-slate-500 leading-relaxed mb-4">
-                  {member.bio}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100">
-                <div className="flex flex-wrap gap-1">
+                <div className="pt-3 border-t border-[#26272b] flex flex-wrap gap-1">
                   {member.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600"
+                      className="text-[11px] font-mono px-2 py-0.5 rounded-[5px] bg-[#1a1b20] text-[#cccccc] border border-white/5"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CAREERS / JOIN OUR POD */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-2">
-              We Are Hiring
+      {/* 3. CAREERS SECTION */}
+      <section id="careers" className="bg-black py-20 sm:py-28 px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[1024px] mx-auto">
+          <div className="text-center max-w-xl mx-auto mb-14">
+            <span className="text-[12px] font-semibold text-[#86868b] uppercase tracking-wider block mb-2">
+              Join Our Hillsborough Studio
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Join Our Engineering Fellowship
+            <h2 className="text-[32px] sm:text-[40px] font-semibold text-white leading-[1.10] mb-3">
+              Open Engineering Roles.
             </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Work alongside top-tier systems architects solving difficult problems for ambitious companies. Remote-first with Hillsborough, NJ hub.
+            <p className="text-[17px] text-[#a1a1a6]">
+              We hire passionate craftspeople who love clean code, zero technical debt, and solving hard distributed systems problems.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
-            {openPositions.map((job, idx) => (
+          <div className="space-y-4 max-w-3xl mx-auto">
+            {openPositions.map((pos, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                className="apple-utility-card flex flex-col sm:flex-row sm:items-center justify-between gap-4"
               >
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">{job.title}</h4>
-                  <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 mt-1">
-                    <span>{job.type}</span>
-                    <span>•</span>
-                    <span className="font-semibold text-emerald-600">{job.salary}</span>
-                  </div>
+                  <h4 className="text-[17px] font-semibold text-white">
+                    {pos.title}
+                  </h4>
+                  <p className="text-[13px] text-[#86868b] mt-0.5">
+                    {pos.type} • <span className="text-[#2997ff] font-medium">{pos.salary}</span>
+                  </p>
                   <div className="flex flex-wrap gap-1.5 mt-3">
-                    {job.skills.map((s, sIdx) => (
+                    {pos.skills.map((s, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600"
+                        className="text-[11px] font-mono px-2 py-0.5 rounded-[5px] bg-[#1a1b20] text-[#cccccc] border border-white/5"
                       >
                         {s}
                       </span>
@@ -257,14 +242,32 @@ export default function Team({ onOpenConsultation }) {
 
                 <Link
                   to="/contact"
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 transition-all text-center shrink-0 flex items-center justify-center space-x-1.5"
+                  className="apple-link text-[14px] shrink-0"
                 >
                   <span>Apply Now</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ChevronRight className="w-4 h-4 ml-0.5" />
                 </Link>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 4. INVITATION TILE */}
+      <section className="bg-[#090a0c] py-20 text-center px-4 sm:px-6 border-t border-[#1e1f24]">
+        <div className="max-w-[640px] mx-auto">
+          <h2 className="text-[28px] sm:text-[34px] font-semibold text-white mb-3">
+            Want to Work Directly With Our Squad?
+          </h2>
+          <p className="text-[17px] text-[#a1a1a6] mb-6">
+            Schedule a technical discovery session to evaluate your roadmap.
+          </p>
+          <button
+            onClick={onOpenConsultation}
+            className="apple-btn-primary"
+          >
+            Start Your Consultation
+          </button>
         </div>
       </section>
     </div>

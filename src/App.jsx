@@ -24,14 +24,14 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white text-slate-900 selection:bg-blue-600 selection:text-white font-sans antialiased">
+    <div className="flex flex-col min-h-screen bg-black text-[#f5f5f7] font-sans antialiased selection:bg-[#0066cc] selection:text-white">
       <ScrollToTop />
 
-      {/* Global Navigation */}
+      {/* Global Apple Navigation */}
       <Nav onOpenConsultation={handleOpenConsultation} />
 
       {/* Main Routed Content */}
-      <main className="flex-grow">
+      <main className="flex-grow bg-black">
         <Routes>
           <Route path="/" element={<Hero onOpenConsultation={handleOpenConsultation} />} />
           <Route path="/about" element={<About onOpenConsultation={handleOpenConsultation} />} />
@@ -53,15 +53,15 @@ function App() {
         onClose={handleCloseConsultation}
       />
 
-      {/* Floating Quick Consultation Action Button */}
+      {/* Floating Apple-Style Quick Action Capsule */}
       <div className="fixed bottom-6 right-6 z-30">
         <button
           onClick={handleOpenConsultation}
-          className="group flex items-center space-x-2 px-4 py-3 bg-slate-900 hover:bg-blue-600 text-white rounded-full shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 active:scale-95 border border-slate-700/60 cursor-pointer"
+          className="group flex items-center space-x-2 px-4 py-2.5 bg-[#141518]/90 hover:bg-[#0066cc] text-white rounded-full backdrop-blur-md transition-all duration-200 active:scale-95 border border-white/20 shadow-2xl cursor-pointer"
           aria-label="Start a Project Consultation"
         >
-          <MessageSquarePlus className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors" />
-          <span className="text-xs font-bold tracking-wide">Quick Consultation</span>
+          <MessageSquarePlus className="w-4 h-4 text-[#2997ff] group-hover:text-white transition-colors" />
+          <span className="text-[12px] font-normal tracking-[-0.12px]">Schedule Call</span>
         </button>
       </div>
     </div>
