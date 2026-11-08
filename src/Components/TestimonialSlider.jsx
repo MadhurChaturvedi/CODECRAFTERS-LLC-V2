@@ -61,7 +61,7 @@ const TestimonialSlider = () => {
           </div>
 
           <blockquote className="text-[20px] sm:text-[24px] font-normal text-white leading-[1.5] tracking-[-0.2px] mb-8">
-            "{current.quote}"
+            &ldquo;{current.quote}&rdquo;
           </blockquote>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-[#26272b]">

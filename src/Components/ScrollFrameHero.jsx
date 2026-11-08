@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
-import { ArrowDown, ChevronRight, Sparkles, Terminal, ShieldCheck } from "lucide-react";
+import { ArrowDown, Terminal, ShieldCheck } from "lucide-react";
 
 export default function ScrollFrameHero({ onOpenConsultation }) {
   const containerRef = useRef(null);

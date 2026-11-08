@@ -61,7 +61,7 @@ function ContactUs() {
             Direct Access to Engineering Partners
           </span>
           <h1 className="text-[38px] sm:text-[52px] lg:text-[60px] font-semibold text-white leading-[1.07] tracking-[-0.28px] max-w-3xl mx-auto mb-4">
-            Let's Architect Your Next System.
+            Let&apos;s Architect Your Next System.
           </h1>
           <p className="text-[20px] sm:text-[24px] text-white/80 font-normal leading-[1.2] max-w-2xl mx-auto">
             Headquartered at 436 Brookside Ln in Hillsborough, New Jersey.

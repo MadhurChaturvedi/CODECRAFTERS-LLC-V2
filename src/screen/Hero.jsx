@@ -9,8 +9,7 @@ import {
   Palette, 
   ShieldCheck, 
   Terminal, 
-  CheckCircle2, 
-  ArrowRight
+  CheckCircle2
 } from "lucide-react";
 import Client from "../Components/Client";
 import TestimonialSlider from "../Components/TestimonialSlider";
@@ -214,7 +213,7 @@ function Hero({ onOpenConsultation }) {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  <p className="text-[#86868b]">// CodeCrafters Infrastructure as Code Blueprint</p>
+                  <p className="text-[#86868b]">{"// CodeCrafters Infrastructure as Code Blueprint"}</p>
                   <pre className="text-[#2997ff] overflow-x-auto text-[12px] leading-relaxed p-4 rounded-[11px] bg-black border border-[#26272b]">
 {`export const CodeCraftersCloudStack = {
   region: "us-east-1 (Hillsborough, NJ Edge)",
